@@ -105,7 +105,7 @@ a[data-pop], [data-pop] a{ cursor:pointer; }
   .write-pen{ width:27px; height:27px; bottom:7px; margin-left:-6px; }
 }
 
-/* ---------- custom cursor ---------- */
+/* ---------- arcane sigil cursor ---------- */
 html.xcur-on, html.xcur-on *{ cursor:none !important; }
 
 #xcur-core, #xcur-ring{
@@ -114,59 +114,79 @@ html.xcur-on, html.xcur-on *{ cursor:none !important; }
 }
 #xcur-core i, #xcur-ring i{ position:absolute; display:block; }
 
-.xc-dot{
-  width:5px; height:5px; margin:-2.5px 0 0 -2.5px; border-radius:99px;
-  background:var(--p-main);
-  transition:width .2s cubic-bezier(.34,1.4,.5,1), height .2s cubic-bezier(.34,1.4,.5,1),
-             margin .2s cubic-bezier(.34,1.4,.5,1), opacity .2s ease;
+/* the spark at the exact pointer position */
+.xc-star{
+  width:15px; height:15px; margin:-7.5px 0 0 -7.5px;
+  color:var(--p-main);
+  filter:drop-shadow(0 0 5px oklch(82% 0.14 88 / 0.6));
+  transition:width .22s cubic-bezier(.34,1.45,.5,1), height .22s cubic-bezier(.34,1.45,.5,1),
+             margin .22s cubic-bezier(.34,1.45,.5,1);
 }
+.xc-star svg{ width:100%; height:100%; display:block; }
+
+/* four fixed cardinal marks — the frame the runes turn inside */
 .xc-t{
-  background:var(--p-main); border-radius:99px; opacity:.9;
+  background:var(--p-mid); border-radius:99px; opacity:.85;
   transition:transform .26s cubic-bezier(.34,1.5,.46,1), opacity .2s ease;
 }
-.xc-n, .xc-s{ width:2.6px; height:8px; margin-left:-1.3px; }
-.xc-n{ margin-top:-17px; }
-.xc-s{ margin-top:9px; }
-.xc-w, .xc-e{ height:2.6px; width:8px; margin-top:-1.3px; }
-.xc-w{ margin-left:-17px; }
-.xc-e{ margin-left:9px; }
+.xc-n, .xc-s{ width:2.2px; height:7px; margin-left:-1.1px; }
+.xc-n{ margin-top:-20px; }
+.xc-s{ margin-top:13px; }
+.xc-w, .xc-e{ height:2.2px; width:7px; margin-top:-1.1px; }
+.xc-w{ margin-left:-20px; }
+.xc-e{ margin-left:13px; }
 
-.xc-ring{
-  width:30px; height:30px; margin:-15px 0 0 -15px; border-radius:99px;
-  border:1.6px solid var(--p-mid); opacity:.5;
-  transition:width .28s cubic-bezier(.34,1.4,.5,1), height .28s cubic-bezier(.34,1.4,.5,1),
-             margin .28s cubic-bezier(.34,1.4,.5,1), opacity .22s ease,
-             background-color .22s ease, border-color .22s ease;
+/* two counter-turning rune rings, trailing a beat behind the spark */
+.xc-orbit{
+  color:var(--p-main); opacity:.5;
+  filter:drop-shadow(0 0 4px oklch(80% 0.13 88 / 0.35));
+  transition:width .3s cubic-bezier(.34,1.4,.5,1), height .3s cubic-bezier(.34,1.4,.5,1),
+             margin .3s cubic-bezier(.34,1.4,.5,1), opacity .25s ease;
 }
+.xc-orbit svg{ width:100%; height:100%; display:block; }
+.xc-orbit.o1{ width:46px; height:46px; margin:-23px 0 0 -23px; }
+.xc-orbit.o2{ width:29px; height:29px; margin:-14.5px 0 0 -14.5px; opacity:.42; }
+.o1 svg{ animation:sigilCW 17s linear infinite; }
+.o2 svg{ animation:sigilCCW 11s linear infinite; }
+@keyframes sigilCW { to{ transform:rotate(360deg); } }
+@keyframes sigilCCW{ to{ transform:rotate(-360deg); } }
 
-/* over something you can click: everything opens up */
-#xcur-core.is-hot .xc-n{ transform:translateY(-9px); }
-#xcur-core.is-hot .xc-s{ transform:translateY(9px); }
-#xcur-core.is-hot .xc-w{ transform:translateX(-9px); }
-#xcur-core.is-hot .xc-e{ transform:translateX(9px); }
-#xcur-core.is-hot .xc-dot{ width:7px; height:7px; margin:-3.5px 0 0 -3.5px; }
-#xcur-ring.is-hot .xc-ring{
-  width:40px; height:40px; margin:-20px 0 0 -20px;
-  opacity:.34; border-color:var(--p-main); background:var(--p-light);
+/* over something you can click: the sigil opens and quickens */
+#xcur-core.is-hot .xc-n{ transform:translateY(-8px); }
+#xcur-core.is-hot .xc-s{ transform:translateY(8px); }
+#xcur-core.is-hot .xc-w{ transform:translateX(-8px); }
+#xcur-core.is-hot .xc-e{ transform:translateX(8px); }
+#xcur-core.is-hot .xc-star{ width:19px; height:19px; margin:-9.5px 0 0 -9.5px; }
+#xcur-ring.is-hot .xc-orbit{ opacity:.8; }
+#xcur-ring.is-hot .o1{ width:62px; height:62px; margin:-31px 0 0 -31px; }
+#xcur-ring.is-hot .o2{ width:40px; height:40px; margin:-20px 0 0 -20px; }
+#xcur-ring.is-hot .o1 svg{ animation-duration:6s; }
+#xcur-ring.is-hot .o2 svg{ animation-duration:4s; }
+
+/* click: everything draws in to the spark, which flares */
+#xcur-core.is-down .xc-n{ transform:translateY(9px); }
+#xcur-core.is-down .xc-s{ transform:translateY(-9px); }
+#xcur-core.is-down .xc-w{ transform:translateX(9px); }
+#xcur-core.is-down .xc-e{ transform:translateX(-9px); }
+#xcur-core.is-down .xc-star{
+  width:22px; height:22px; margin:-11px 0 0 -11px;
+  filter:drop-shadow(0 0 13px oklch(88% 0.15 90 / 0.9));
 }
+#xcur-ring.is-down .o1{ width:30px; height:30px; margin:-15px 0 0 -15px; }
+#xcur-ring.is-down .o2{ width:19px; height:19px; margin:-9.5px 0 0 -9.5px; }
+#xcur-ring.is-down .xc-orbit{ opacity:1; }
 
-/* click: the ticks tuck in, then spring back */
-#xcur-core.is-down .xc-n{ transform:translateY(7px); }
-#xcur-core.is-down .xc-s{ transform:translateY(-7px); }
-#xcur-core.is-down .xc-w{ transform:translateX(7px); }
-#xcur-core.is-down .xc-e{ transform:translateX(-7px); }
-#xcur-core.is-down .xc-dot{ width:9px; height:9px; margin:-4.5px 0 0 -4.5px; }
-#xcur-ring.is-down .xc-ring{ width:23px; height:23px; margin:-11.5px 0 0 -11.5px; opacity:.8; }
-
+/* the cast: a rune ring that expands and turns as it fades */
 .xc-ripple{
   position:fixed; z-index:9998; pointer-events:none; display:block;
-  width:20px; height:20px; margin:-10px 0 0 -10px; border-radius:99px;
-  border:2px solid var(--p-main);
-  animation:xcRipple .6s cubic-bezier(.2,.8,.3,1) forwards;
+  width:44px; height:44px; margin:-22px 0 0 -22px;
+  color:var(--p-main); opacity:0;
+  animation:xcCast .68s cubic-bezier(.2,.8,.3,1) forwards;
 }
-@keyframes xcRipple{
-  from{ opacity:.55; transform:scale(.4); }
-  to  { opacity:0;   transform:scale(2.6); }
+.xc-ripple svg{ width:100%; height:100%; display:block; }
+@keyframes xcCast{
+  0%  { opacity:.85; transform:scale(.35) rotate(0deg); }
+  100%{ opacity:0;   transform:scale(2.3) rotate(70deg); }
 }
 
 @media (hover: none), (prefers-reduced-motion: reduce){
