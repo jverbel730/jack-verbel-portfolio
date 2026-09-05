@@ -51,3 +51,8 @@ a:hover .btn { transform: translateY(-1px); filter: brightness(1.06); }
   .pfield i { animation: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* project cards */
+.card{ transition:transform .25s ease, box-shadow .25s ease; }
+.card:hover{ transform:translateY(-5px); box-shadow:0 20px 44px rgba(0,0,0,0.08); }
+@media (prefers-reduced-motion: reduce){ .card{ transition:none; } .card:hover{ transform:none; } }
