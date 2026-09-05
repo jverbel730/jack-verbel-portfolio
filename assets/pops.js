@@ -108,8 +108,9 @@
   }
 })();
 
-/* Custom cursor — a soft crosshair: centre dot, four pill ticks, and a ring
-   that trails behind. Grows over anything interactive, springs on click.
+/* Custom cursor — an arcane sigil: a four-point spark on the pointer, four
+   fixed cardinal marks, and two counter-turning rune rings that trail behind.
+   Opens and quickens over anything interactive; casts a rune ring on click.
    Native cursor is only hidden once this runs, so no-JS keeps its arrow. */
 (function () {
   'use strict';
@@ -120,17 +121,42 @@
 
   var core, ring, x = -200, y = -200, rx = -200, ry = -200, raf = 0, started = false;
 
+  // a four-point arcane spark sits on the pointer
+  var STAR = '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+    '<path fill="currentColor" d="M12 1c.55 5.35 4.65 9.45 10 10-5.35.55-9.45 4.65-10 10' +
+    '-.55-5.35-4.65-9.45-10-10 5.35-.55 9.45-4.65 10-10z"/></svg>';
+
+  // two rune rings: broken dashes so they read as turning glyphs
+  var ORBIT_OUTER = '<svg viewBox="0 0 48 48" aria-hidden="true" fill="none" ' +
+    'stroke="currentColor" stroke-linecap="round">' +
+    '<circle cx="24" cy="24" r="21" stroke-width="1.7" stroke-dasharray="2.5 8.5"/>' +
+    '<circle cx="24" cy="24" r="17" stroke-width="1.3" stroke-dasharray="18 30" opacity="0.75"/>' +
+    '</svg>';
+
+  var ORBIT_INNER = '<svg viewBox="0 0 48 48" aria-hidden="true" fill="none" ' +
+    'stroke="currentColor" stroke-linecap="round">' +
+    '<circle cx="24" cy="24" r="19" stroke-width="2" stroke-dasharray="11 26"/>' +
+    '</svg>';
+
+  // the cast ring thrown on click
+  var CAST = '<svg viewBox="0 0 48 48" aria-hidden="true" fill="none" ' +
+    'stroke="currentColor" stroke-linecap="round">' +
+    '<circle cx="24" cy="24" r="20" stroke-width="1.8" stroke-dasharray="3 9"/>' +
+    '<circle cx="24" cy="24" r="14" stroke-width="1.2" stroke-dasharray="16 26" opacity="0.7"/>' +
+    '</svg>';
+
   function build() {
     core = document.createElement('div');
     core.id = 'xcur-core';
     core.setAttribute('aria-hidden', 'true');
-    core.innerHTML = '<i class="xc-dot"></i><i class="xc-t xc-n"></i>' +
+    core.innerHTML = '<i class="xc-star">' + STAR + '</i><i class="xc-t xc-n"></i>' +
                      '<i class="xc-t xc-s"></i><i class="xc-t xc-w"></i><i class="xc-t xc-e"></i>';
 
     ring = document.createElement('div');
     ring.id = 'xcur-ring';
     ring.setAttribute('aria-hidden', 'true');
-    ring.innerHTML = '<i class="xc-ring"></i>';
+    ring.innerHTML = '<i class="xc-orbit o1">' + ORBIT_OUTER + '</i>' +
+                     '<i class="xc-orbit o2">' + ORBIT_INNER + '</i>';
 
     document.body.appendChild(ring);
     document.body.appendChild(core);
@@ -163,10 +189,11 @@
   function ripple() {
     var r = document.createElement('i');
     r.className = 'xc-ripple';
+    r.innerHTML = CAST;
     r.style.left = x + 'px';
     r.style.top = y + 'px';
     document.body.appendChild(r);
-    setTimeout(function () { if (r.parentNode) r.parentNode.removeChild(r); }, 620);
+    setTimeout(function () { if (r.parentNode) r.parentNode.removeChild(r); }, 700);
   }
 
   function start() {
