@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HUGO x Movado Watch — Jack Verbel</title>
+<meta name="description" content="A three-hand analog watch designed for HUGO with Movado Group, from moodboard and sketches through concept renders to the final design.">
+<meta name="author" content="Jack Verbel">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HUGO x Movado Watch — Jack Verbel">
+<meta property="og:description" content="A three-hand analog watch designed for HUGO with Movado Group, from moodboard and sketches through concept renders to the final design.">
+<meta property="og:image" content="assets/hero_angle.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 400%22%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22190%22 fill=%22%23fff%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22150%22 fill=%22none%22 stroke=%22%23f97316%22 stroke-width=%2244%22 stroke-dasharray=%22785 157%22 transform=%22rotate(-10 200 200)%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%2296%22 fill=%22none%22 stroke=%22%23fb923c%22 stroke-width=%2240%22 stroke-dasharray=%22502 100%22 transform=%22rotate(55 200 200)%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%2226%22 fill=%22%23c2410c%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+      --bg: oklch(99.5% 0 0);
+      --surface: oklch(96.5% 0 0);
+      --panel: oklch(100% 0 0);
+      --border: oklch(89% 0 0);
+      --text: oklch(17% 0 0);
+      --text-muted: oklch(45% 0 0);
+      --p-deep: oklch(47% 0.18 42);
+      --p-main: oklch(61% 0.22 45);
+      --p-mid: oklch(72% 0.17 52);
+      --p-soft: oklch(83% 0.11 60);
+      --p-light: oklch(92% 0.055 65);
+      --grad: linear-gradient(90deg, var(--p-deep), var(--p-main), var(--p-mid), var(--p-soft));
+      --font-display: 'Poppins', sans-serif;
+      --font-body: 'Poppins', sans-serif;
+    }
+    *{ box-sizing:border-box; }
+    body{ margin:0; background:var(--bg); font-family:var(--font-body); text-wrap:pretty; }
+    a{ color:var(--p-main); }
+    a:hover{ color:var(--p-deep); }
+    .pfield{ position:absolute; inset:0; z-index:-1; overflow:hidden; pointer-events:none; }
+    .pfield i{ position:absolute; display:block; border-radius:50%; background:oklch(66% 0.22 47); will-change:transform; }
+    @keyframes pdriftA{ 0%,100%{ transform:translate3d(0,0,0); } 50%{ transform:translate3d(48px,-92px,0); } }
+    @keyframes pdriftB{ 0%,100%{ transform:translate3d(0,0,0); } 50%{ transform:translate3d(-58px,-74px,0); } }
+    @keyframes pdriftC{ 0%,100%{ transform:translate3d(0,0,0); } 50%{ transform:translate3d(34px,70px,0); } }
+    @keyframes ppulse{ 0%,100%{ opacity:var(--o); } 50%{ opacity:calc(var(--o) * 0.3); } }
+    @media (prefers-reduced-motion: reduce){ .pfield i{ animation:none !important; } }
+    .wrap{ max-width:1280px; margin:0 auto; padding:0 80px; }
+    .badge{ font-family:var(--font-body); font-size:12px; font-weight:700; padding:7px 16px; border-radius:999px; background:#fff; border:1.5px solid var(--p-light); }
+    .step{ display:flex; flex-direction:column; gap:10px; }
+    .step-num{ font-family:var(--font-display); font-weight:800; font-size:15px; }
+    .section-title{ font-family:var(--font-display); font-weight:800; font-size:32px; color:var(--p-main); margin:14px 0 12px 0; }
+    .eyebrow{ font-family:var(--font-body); font-size:13px; font-weight:700; letter-spacing:1.2px; color:var(--p-main); text-transform:uppercase; }
+    .card{ background:var(--panel); border:1px solid var(--border); border-radius:20px; }
+    .concept-img{ width:100%; height:220px; background:#fff; display:flex; align-items:center; justify-content:center; overflow:hidden; border-radius:19px 19px 0 0; }
+    .concept-img img{ width:100%; height:100%; object-fit:contain; }
+    .lede{ font-family:var(--font-body); font-size:16px; line-height:1.7; color:var(--text-muted); margin:0 0 32px 0; max-width:760px; }
+</style>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div style="width:100%; background:var(--bg); overflow:hidden; position:relative; isolation:isolate;">
+  <div class="pfield" aria-hidden="true"><i style="left:22.62%; top:14.18%; width:3.4px; height:3.4px; --o:0.343; opacity:0.343; animation:pdriftC 5.4s ease-in-out -3.3s infinite, ppulse 3.0s ease-in-out -0.5s infinite;"></i><i style="left:29.29%; top:43.35%; width:4.9px; height:4.9px; --o:0.281; opacity:0.281; animation:pdriftA 4.4s ease-in-out -3.3s infinite, ppulse 5.1s ease-in-out -4.6s infinite;"></i><i style="left:20.58%; top:70.69%; width:5.8px; height:5.8px; --o:0.189; opacity:0.189; animation:pdriftB 6.7s ease-in-out -2.6s infinite, ppulse 3.5s ease-in-out -0.1s infinite;"></i><i style="left:18.65%; top:23.30%; width:3.7px; height:3.7px; --o:0.213; opacity:0.213; animation:pdriftC 6.7s ease-in-out -2.5s infinite, ppulse 3.7s ease-in-out -1.8s infinite;"></i><i style="left:5.32%; top:80.15%; width:2.6px; height:2.6px; --o:0.162; opacity:0.162; animation:pdriftC 3.1s ease-in-out -0.3s infinite, ppulse 3.6s ease-in-out -2.2s infinite;"></i><i style="left:43.55%; top:90.53%; width:6.1px; height:6.1px; --o:0.361; opacity:0.361; animation:pdriftB 5.3s ease-in-out -3.6s infinite, ppulse 5.5s ease-in-out -4.3s infinite;"></i><i style="left:14.43%; top:50.81%; width:5.7px; height:5.7px; --o:0.279; opacity:0.279; animation:pdriftC 6.4s ease-in-out -1.5s infinite, ppulse 2.7s ease-in-out -0.3s infinite;"></i><i style="left:47.53%; top:46.27%; width:3.1px; height:3.1px; --o:0.291; opacity:0.291; animation:pdriftA 7.0s ease-in-out -1.6s infinite, ppulse 2.5s ease-in-out -1.4s infinite;"></i><i style="left:65.02%; top:64.35%; width:2.7px; height:2.7px; --o:0.283; opacity:0.283; animation:pdriftA 5.0s ease-in-out -2.5s infinite, ppulse 5.0s ease-in-out -4.7s infinite;"></i><i style="left:51.43%; top:41.09%; width:5.1px; height:5.1px; --o:0.162; opacity:0.162; animation:pdriftC 6.4s ease-in-out -5.3s infinite, ppulse 4.5s ease-in-out -1.6s infinite;"></i><i style="left:49.80%; top:11.09%; width:3.2px; height:3.2px; --o:0.361; opacity:0.361; animation:pdriftA 6.1s ease-in-out -5.5s infinite, ppulse 4.3s ease-in-out -3.6s infinite;"></i><i style="left:21.67%; top:79.92%; width:5.7px; height:5.7px; --o:0.256; opacity:0.256; animation:pdriftA 3.2s ease-in-out -2.3s infinite, ppulse 4.7s ease-in-out -1.9s infinite;"></i><i style="left:60.95%; top:61.46%; width:2.5px; height:2.5px; --o:0.267; opacity:0.267; animation:pdriftC 3.9s ease-in-out -1.8s infinite, ppulse 4.4s ease-in-out -1.5s infinite;"></i><i style="left:42.04%; top:41.31%; width:4.7px; height:4.7px; --o:0.346; opacity:0.346; animation:pdriftA 4.6s ease-in-out -2.1s infinite, ppulse 3.8s ease-in-out -1.4s infinite;"></i><i style="left:11.61%; top:93.12%; width:3.2px; height:3.2px; --o:0.243; opacity:0.243; animation:pdriftC 4.6s ease-in-out -2.3s infinite, ppulse 4.6s ease-in-out -1.1s infinite;"></i><i style="left:86.58%; top:87.46%; width:5.5px; height:5.5px; --o:0.237; opacity:0.237; animation:pdriftA 6.5s ease-in-out -2.1s infinite, ppulse 4.3s ease-in-out -3.4s infinite;"></i><i style="left:56.94%; top:4.78%; width:5.3px; height:5.3px; --o:0.234; opacity:0.234; animation:pdriftB 7.1s ease-in-out -0.4s infinite, ppulse 2.6s ease-in-out -0.4s infinite;"></i><i style="left:94.31%; top:42.05%; width:6.4px; height:6.4px; --o:0.241; opacity:0.241; animation:pdriftA 7.0s ease-in-out -3.6s infinite, ppulse 4.6s ease-in-out -3.4s infinite;"></i><i style="left:92.46%; top:85.18%; width:4.1px; height:4.1px; --o:0.345; opacity:0.345; animation:pdriftA 4.0s ease-in-out -1.0s infinite, ppulse 4.1s ease-in-out -2.5s infinite;"></i><i style="left:67.11%; top:95.09%; width:5.1px; height:5.1px; --o:0.392; opacity:0.392; animation:pdriftA 7.0s ease-in-out -6.3s infinite, ppulse 4.7s ease-in-out -4.0s infinite;"></i><i style="left:42.59%; top:98.01%; width:4.2px; height:4.2px; --o:0.195; opacity:0.195; animation:pdriftB 6.5s ease-in-out -2.6s infinite, ppulse 2.9s ease-in-out -2.3s infinite;"></i><i style="left:50.49%; top:15.00%; width:6.6px; height:6.6px; --o:0.267; opacity:0.267; animation:pdriftB 4.1s ease-in-out -4.1s infinite, ppulse 5.4s ease-in-out -4.8s infinite;"></i><i style="left:51.04%; top:47.14%; width:4.9px; height:4.9px; --o:0.312; opacity:0.312; animation:pdriftA 6.5s ease-in-out -1.9s infinite, ppulse 4.4s ease-in-out -2.9s infinite;"></i><i style="left:67.16%; top:22.16%; width:4.0px; height:4.0px; --o:0.299; opacity:0.299; animation:pdriftC 4.4s ease-in-out -1.6s infinite, ppulse 5.0s ease-in-out -4.1s infinite;"></i><i style="left:42.09%; top:96.42%; width:3.4px; height:3.4px; --o:0.172; opacity:0.172; animation:pdriftA 6.8s ease-in-out -2.0s infinite, ppulse 2.7s ease-in-out -1.7s infinite;"></i><i style="left:47.35%; top:88.87%; width:6.3px; height:6.3px; --o:0.342; opacity:0.342; animation:pdriftA 3.5s ease-in-out -2.1s infinite, ppulse 2.3s ease-in-out -1.3s infinite;"></i><i style="left:31.34%; top:66.27%; width:2.7px; height:2.7px; --o:0.196; opacity:0.196; animation:pdriftB 6.5s ease-in-out -1.0s infinite, ppulse 2.8s ease-in-out -0.8s infinite;"></i><i style="left:14.32%; top:66.71%; width:5.5px; height:5.5px; --o:0.261; opacity:0.261; animation:pdriftC 7.2s ease-in-out -7.1s infinite, ppulse 2.4s ease-in-out -2.0s infinite;"></i><i style="left:48.22%; top:47.95%; width:5.0px; height:5.0px; --o:0.368; opacity:0.368; animation:pdriftA 4.8s ease-in-out -1.7s infinite, ppulse 4.3s ease-in-out -3.2s infinite;"></i><i style="left:63.11%; top:14.18%; width:2.6px; height:2.6px; --o:0.208; opacity:0.208; animation:pdriftC 5.4s ease-in-out -3.6s infinite, ppulse 2.2s ease-in-out -0.9s infinite;"></i><i style="left:12.95%; top:17.17%; width:5.2px; height:5.2px; --o:0.296; opacity:0.296; animation:pdriftA 6.2s ease-in-out -4.4s infinite, ppulse 3.3s ease-in-out -0.1s infinite;"></i><i style="left:28.03%; top:59.13%; width:3.4px; height:3.4px; --o:0.209; opacity:0.209; animation:pdriftA 5.1s ease-in-out -3.3s infinite, ppulse 2.8s ease-in-out -0.6s infinite;"></i><i style="left:35.99%; top:80.18%; width:3.2px; height:3.2px; --o:0.415; opacity:0.415; animation:pdriftB 5.6s ease-in-out -2.2s infinite, ppulse 4.2s ease-in-out -2.2s infinite;"></i><i style="left:32.97%; top:9.33%; width:6.1px; height:6.1px; --o:0.251; opacity:0.251; animation:pdriftA 3.0s ease-in-out -0.1s infinite, ppulse 2.6s ease-in-out -0.4s infinite;"></i><i style="left:14.44%; top:53.60%; width:5.0px; height:5.0px; --o:0.405; opacity:0.405; animation:pdriftC 4.5s ease-in-out -3.8s infinite, ppulse 4.2s ease-in-out -0.4s infinite;"></i><i style="left:83.03%; top:89.71%; width:6.2px; height:6.2px; --o:0.333; opacity:0.333; animation:pdriftC 4.6s ease-in-out -3.8s infinite, ppulse 4.7s ease-in-out -1.9s infinite;"></i><i style="left:40.29%; top:0.96%; width:4.9px; height:4.9px; --o:0.254; opacity:0.254; animation:pdriftC 7.0s ease-in-out -2.6s infinite, ppulse 5.0s ease-in-out -0.3s infinite;"></i><i style="left:23.14%; top:17.62%; width:6.5px; height:6.5px; --o:0.202; opacity:0.202; animation:pdriftC 5.1s ease-in-out -4.5s infinite, ppulse 4.5s ease-in-out -0.9s infinite;"></i><i style="left:81.32%; top:78.94%; width:4.8px; height:4.8px; --o:0.344; opacity:0.344; animation:pdriftA 6.8s ease-in-out -4.2s infinite, ppulse 2.4s ease-in-out -0.4s infinite;"></i><i style="left:16.91%; top:29.42%; width:5.9px; height:5.9px; --o:0.237; opacity:0.237; animation:pdriftC 5.0s ease-in-out -4.9s infinite, ppulse 5.3s ease-in-out -3.3s infinite;"></i><i style="left:40.00%; top:67.18%; width:5.4px; height:5.4px; --o:0.292; opacity:0.292; animation:pdriftC 7.3s ease-in-out -2.7s infinite, ppulse 4.6s ease-in-out -2.3s infinite;"></i><i style="left:20.55%; top:87.36%; width:3.6px; height:3.6px; --o:0.261; opacity:0.261; animation:pdriftA 3.1s ease-in-out -2.9s infinite, ppulse 2.9s ease-in-out -2.5s infinite;"></i><i style="left:34.08%; top:13.50%; width:2.9px; height:2.9px; --o:0.181; opacity:0.181; animation:pdriftA 7.4s ease-in-out -3.5s infinite, ppulse 3.5s ease-in-out -1.1s infinite;"></i><i style="left:93.54%; top:38.93%; width:2.4px; height:2.4px; --o:0.303; opacity:0.303; animation:pdriftC 7.3s ease-in-out -7.2s infinite, ppulse 4.0s ease-in-out -3.3s infinite;"></i><i style="left:50.85%; top:27.61%; width:4.6px; height:4.6px; --o:0.228; opacity:0.228; animation:pdriftC 7.1s ease-in-out -2.1s infinite, ppulse 5.2s ease-in-out -4.0s infinite;"></i><i style="left:52.07%; top:1.69%; width:5.5px; height:5.5px; --o:0.324; opacity:0.324; animation:pdriftC 4.1s ease-in-out -1.6s infinite, ppulse 2.7s ease-in-out -1.3s infinite;"></i><i style="left:29.12%; top:8.79%; width:3.6px; height:3.6px; --o:0.192; opacity:0.192; animation:pdriftA 5.7s ease-in-out -2.0s infinite, ppulse 4.4s ease-in-out -0.7s infinite;"></i><i style="left:50.32%; top:29.27%; width:5.8px; height:5.8px; --o:0.282; opacity:0.282; animation:pdriftB 4.8s ease-in-out -2.8s infinite, ppulse 2.4s ease-in-out -1.8s infinite;"></i><i style="left:88.94%; top:89.65%; width:3.5px; height:3.5px; --o:0.317; opacity:0.317; animation:pdriftB 4.9s ease-in-out -2.0s infinite, ppulse 3.0s ease-in-out -0.8s infinite;"></i><i style="left:20.21%; top:56.14%; width:4.6px; height:4.6px; --o:0.169; opacity:0.169; animation:pdriftA 3.6s ease-in-out -2.2s infinite, ppulse 4.6s ease-in-out -0.7s infinite;"></i><i style="left:8.28%; top:71.25%; width:3.6px; height:3.6px; --o:0.35; opacity:0.35; animation:pdriftB 4.4s ease-in-out -2.6s infinite, ppulse 3.3s ease-in-out -2.9s infinite;"></i><i style="left:54.93%; top:16.18%; width:6.3px; height:6.3px; --o:0.398; opacity:0.398; animation:pdriftC 3.6s ease-in-out -1.4s infinite, ppulse 2.2s ease-in-out -0.7s infinite;"></i><i style="left:86.10%; top:80.52%; width:3.3px; height:3.3px; --o:0.28; opacity:0.28; animation:pdriftB 5.5s ease-in-out -4.6s infinite, ppulse 4.6s ease-in-out -2.2s infinite;"></i><i style="left:45.09%; top:24.69%; width:4.8px; height:4.8px; --o:0.24; opacity:0.24; animation:pdriftA 7.1s ease-in-out -6.7s infinite, ppulse 3.2s ease-in-out -2.9s infinite;"></i><i style="left:29.94%; top:85.32%; width:2.7px; height:2.7px; --o:0.229; opacity:0.229; animation:pdriftC 5.1s ease-in-out -1.0s infinite, ppulse 4.2s ease-in-out -3.3s infinite;"></i><i style="left:28.33%; top:61.82%; width:3.4px; height:3.4px; --o:0.396; opacity:0.396; animation:pdriftC 5.7s ease-in-out -3.2s infinite, ppulse 2.2s ease-in-out -0.6s infinite;"></i><i style="left:51.75%; top:86.94%; width:6.6px; height:6.6px; --o:0.35; opacity:0.35; animation:pdriftC 5.4s ease-in-out -0.1s infinite, ppulse 4.1s ease-in-out -0.5s infinite;"></i><i style="left:46.53%; top:54.18%; width:5.3px; height:5.3px; --o:0.39; opacity:0.39; animation:pdriftA 6.6s ease-in-out -1.5s infinite, ppulse 3.2s ease-in-out -0.9s infinite;"></i><i style="left:43.15%; top:25.42%; width:5.7px; height:5.7px; --o:0.34; opacity:0.34; animation:pdriftB 3.7s ease-in-out -1.1s infinite, ppulse 4.9s ease-in-out -0.5s infinite;"></i><i style="left:15.11%; top:98.80%; width:3.8px; height:3.8px; --o:0.408; opacity:0.408; animation:pdriftA 7.4s ease-in-out -1.7s infinite, ppulse 4.0s ease-in-out -0.9s infinite;"></i><i style="left:39.31%; top:27.35%; width:3.3px; height:3.3px; --o:0.303; opacity:0.303; animation:pdriftC 5.2s ease-in-out -2.7s infinite, ppulse 2.8s ease-in-out -0.1s infinite;"></i><i style="left:96.70%; top:42.09%; width:4.2px; height:4.2px; --o:0.282; opacity:0.282; animation:pdriftB 6.7s ease-in-out -1.1s infinite, ppulse 5.4s ease-in-out -2.1s infinite;"></i><i style="left:88.07%; top:35.68%; width:2.6px; height:2.6px; --o:0.365; opacity:0.365; animation:pdriftA 4.0s ease-in-out -2.1s infinite, ppulse 5.2s ease-in-out -2.0s infinite;"></i><i style="left:76.46%; top:36.72%; width:2.8px; height:2.8px; --o:0.2; opacity:0.2; animation:pdriftC 6.1s ease-in-out -3.1s infinite, ppulse 3.2s ease-in-out -1.2s infinite;"></i><i style="left:19.35%; top:15.46%; width:6.2px; height:6.2px; --o:0.164; opacity:0.164; animation:pdriftB 5.7s ease-in-out -1.3s infinite, ppulse 4.7s ease-in-out -0.7s infinite;"></i><i style="left:13.72%; top:71.22%; width:3.2px; height:3.2px; --o:0.413; opacity:0.413; animation:pdriftB 4.6s ease-in-out -0.3s infinite, ppulse 5.2s ease-in-out -3.5s infinite;"></i><i style="left:56.33%; top:70.10%; width:4.8px; height:4.8px; --o:0.331; opacity:0.331; animation:pdriftB 3.0s ease-in-out -0.9s infinite, ppulse 2.8s ease-in-out -0.7s infinite;"></i><i style="left:7.05%; top:44.13%; width:3.4px; height:3.4px; --o:0.379; opacity:0.379; animation:pdriftC 3.0s ease-in-out -0.4s infinite, ppulse 5.5s ease-in-out -5.1s infinite;"></i><i style="left:57.83%; top:77.12%; width:5.6px; height:5.6px; --o:0.308; opacity:0.308; animation:pdriftA 6.8s ease-in-out -4.9s infinite, ppulse 4.3s ease-in-out -3.6s infinite;"></i><i style="left:78.65%; top:15.78%; width:6.3px; height:6.3px; --o:0.307; opacity:0.307; animation:pdriftA 5.0s ease-in-out -4.3s infinite, ppulse 3.5s ease-in-out -2.1s infinite;"></i><i style="left:23.74%; top:30.90%; width:3.5px; height:3.5px; --o:0.223; opacity:0.223; animation:pdriftC 4.0s ease-in-out -2.8s infinite, ppulse 5.2s ease-in-out -5.0s infinite;"></i><i style="left:23.07%; top:23.34%; width:2.9px; height:2.9px; --o:0.351; opacity:0.351; animation:pdriftA 4.9s ease-in-out -0.6s infinite, ppulse 4.7s ease-in-out -4.2s infinite;"></i><i style="left:57.61%; top:57.20%; width:4.3px; height:4.3px; --o:0.237; opacity:0.237; animation:pdriftB 7.2s ease-in-out -6.2s infinite, ppulse 5.2s ease-in-out -4.3s infinite;"></i><i style="left:34.35%; top:13.49%; width:4.9px; height:4.9px; --o:0.226; opacity:0.226; animation:pdriftB 7.1s ease-in-out -0.9s infinite, ppulse 4.8s ease-in-out -0.5s infinite;"></i><i style="left:80.30%; top:90.01%; width:5.6px; height:5.6px; --o:0.165; opacity:0.165; animation:pdriftC 3.1s ease-in-out -3.0s infinite, ppulse 2.9s ease-in-out -2.8s infinite;"></i><i style="left:87.71%; top:56.85%; width:5.6px; height:5.6px; --o:0.328; opacity:0.328; animation:pdriftB 6.6s ease-in-out -6.2s infinite, ppulse 3.6s ease-in-out -1.7s infinite;"></i><i style="left:12.87%; top:35.54%; width:5.5px; height:5.5px; --o:0.341; opacity:0.341; animation:pdriftC 7.1s ease-in-out -4.4s infinite, ppulse 4.9s ease-in-out -3.7s infinite;"></i><i style="left:16.64%; top:71.78%; width:4.7px; height:4.7px; --o:0.275; opacity:0.275; animation:pdriftC 5.6s ease-in-out -0.3s infinite, ppulse 3.4s ease-in-out -2.4s infinite;"></i><i style="left:38.74%; top:7.74%; width:3.8px; height:3.8px; --o:0.286; opacity:0.286; animation:pdriftB 5.4s ease-in-out -2.9s infinite, ppulse 4.5s ease-in-out -3.4s infinite;"></i><i style="left:44.14%; top:56.75%; width:6.0px; height:6.0px; --o:0.221; opacity:0.221; animation:pdriftB 4.2s ease-in-out -0.1s infinite, ppulse 4.9s ease-in-out -0.9s infinite;"></i><i style="left:75.11%; top:53.67%; width:3.5px; height:3.5px; --o:0.394; opacity:0.394; animation:pdriftB 4.9s ease-in-out -1.0s infinite, ppulse 4.1s ease-in-out -0.5s infinite;"></i><i style="left:67.85%; top:62.29%; width:3.2px; height:3.2px; --o:0.386; opacity:0.386; animation:pdriftB 5.1s ease-in-out -2.6s infinite, ppulse 3.3s ease-in-out -1.2s infinite;"></i><i style="left:3.75%; top:86.50%; width:4.7px; height:4.7px; --o:0.397; opacity:0.397; animation:pdriftB 3.9s ease-in-out -0.6s infinite, ppulse 5.0s ease-in-out -2.7s infinite;"></i><i style="left:94.52%; top:5.89%; width:6.2px; height:6.2px; --o:0.303; opacity:0.303; animation:pdriftB 7.0s ease-in-out -4.4s infinite, ppulse 5.5s ease-in-out -4.6s infinite;"></i><i style="left:69.38%; top:24.83%; width:4.5px; height:4.5px; --o:0.313; opacity:0.313; animation:pdriftB 5.7s ease-in-out -5.0s infinite, ppulse 3.8s ease-in-out -0.7s infinite;"></i><i style="left:58.59%; top:64.40%; width:3.0px; height:3.0px; --o:0.259; opacity:0.259; animation:pdriftA 7.3s ease-in-out -3.2s infinite, ppulse 4.3s ease-in-out -3.5s infinite;"></i><i style="left:28.19%; top:98.18%; width:2.5px; height:2.5px; --o:0.173; opacity:0.173; animation:pdriftA 5.4s ease-in-out -1.4s infinite, ppulse 5.0s ease-in-out -2.9s infinite;"></i><i style="left:86.37%; top:82.83%; width:4.9px; height:4.9px; --o:0.262; opacity:0.262; animation:pdriftB 3.5s ease-in-out -3.2s infinite, ppulse 2.5s ease-in-out -0.4s infinite;"></i><i style="left:80.10%; top:58.07%; width:4.2px; height:4.2px; --o:0.333; opacity:0.333; animation:pdriftB 3.6s ease-in-out -0.1s infinite, ppulse 3.4s ease-in-out -0.3s infinite;"></i><i style="left:30.29%; top:16.39%; width:6.3px; height:6.3px; --o:0.262; opacity:0.262; animation:pdriftA 6.2s ease-in-out -2.9s infinite, ppulse 2.4s ease-in-out -1.3s infinite;"></i><i style="left:22.02%; top:65.95%; width:6.5px; height:6.5px; --o:0.371; opacity:0.371; animation:pdriftA 5.0s ease-in-out -3.5s infinite, ppulse 5.4s ease-in-out -0.4s infinite;"></i><i style="left:4.64%; top:20.52%; width:6.3px; height:6.3px; --o:0.27; opacity:0.27; animation:pdriftA 3.9s ease-in-out -2.4s infinite, ppulse 2.4s ease-in-out -1.9s infinite;"></i><i style="left:60.41%; top:84.98%; width:4.0px; height:4.0px; --o:0.2; opacity:0.2; animation:pdriftA 6.0s ease-in-out -4.5s infinite, ppulse 2.3s ease-in-out -0.1s infinite;"></i><i style="left:1.65%; top:75.23%; width:3.1px; height:3.1px; --o:0.404; opacity:0.404; animation:pdriftC 7.2s ease-in-out -5.1s infinite, ppulse 2.3s ease-in-out -0.6s infinite;"></i><i style="left:24.54%; top:21.36%; width:4.9px; height:4.9px; --o:0.353; opacity:0.353; animation:pdriftB 5.8s ease-in-out -4.8s infinite, ppulse 3.1s ease-in-out -2.3s infinite;"></i><i style="left:22.08%; top:84.56%; width:5.6px; height:5.6px; --o:0.301; opacity:0.301; animation:pdriftA 6.8s ease-in-out -4.7s infinite, ppulse 4.3s ease-in-out -3.8s infinite;"></i><i style="left:17.14%; top:15.38%; width:6.6px; height:6.6px; --o:0.381; opacity:0.381; animation:pdriftA 3.6s ease-in-out -2.0s infinite, ppulse 3.1s ease-in-out -2.1s infinite;"></i><i style="left:37.85%; top:61.52%; width:4.6px; height:4.6px; --o:0.33; opacity:0.33; animation:pdriftC 4.2s ease-in-out -3.2s infinite, ppulse 3.1s ease-in-out -1.9s infinite;"></i><i style="left:9.72%; top:98.88%; width:4.2px; height:4.2px; --o:0.168; opacity:0.168; animation:pdriftB 4.7s ease-in-out -1.7s infinite, ppulse 5.1s ease-in-out -0.1s infinite;"></i><i style="left:41.14%; top:90.65%; width:4.6px; height:4.6px; --o:0.356; opacity:0.356; animation:pdriftC 6.1s ease-in-out -2.5s infinite, ppulse 4.4s ease-in-out -2.7s infinite;"></i><i style="left:84.91%; top:97.40%; width:6.1px; height:6.1px; --o:0.283; opacity:0.283; animation:pdriftB 5.7s ease-in-out -5.5s infinite, ppulse 3.5s ease-in-out -3.5s infinite;"></i><i style="left:61.03%; top:63.11%; width:5.0px; height:5.0px; --o:0.329; opacity:0.329; animation:pdriftC 4.2s ease-in-out -3.4s infinite, ppulse 4.7s ease-in-out -1.2s infinite;"></i><i style="left:72.69%; top:76.86%; width:5.7px; height:5.7px; --o:0.205; opacity:0.205; animation:pdriftA 3.2s ease-in-out -1.2s infinite, ppulse 5.3s ease-in-out -5.1s infinite;"></i><i style="left:62.08%; top:87.01%; width:4.2px; height:4.2px; --o:0.321; opacity:0.321; animation:pdriftB 7.1s ease-in-out -7.0s infinite, ppulse 5.3s ease-in-out -0.2s infinite;"></i><i style="left:67.62%; top:96.23%; width:5.6px; height:5.6px; --o:0.335; opacity:0.335; animation:pdriftB 6.0s ease-in-out -5.9s infinite, ppulse 4.0s ease-in-out -2.5s infinite;"></i><i style="left:44.85%; top:28.58%; width:3.3px; height:3.3px; --o:0.194; opacity:0.194; animation:pdriftC 6.6s ease-in-out -1.8s infinite, ppulse 3.6s ease-in-out -2.9s infinite;"></i><i style="left:83.92%; top:56.75%; width:2.7px; height:2.7px; --o:0.179; opacity:0.179; animation:pdriftC 3.4s ease-in-out -1.9s infinite, ppulse 3.2s ease-in-out -1.6s infinite;"></i><i style="left:3.40%; top:19.52%; width:4.4px; height:4.4px; --o:0.202; opacity:0.202; animation:pdriftC 4.4s ease-in-out -1.0s infinite, ppulse 4.3s ease-in-out -2.7s infinite;"></i><i style="left:14.27%; top:83.13%; width:4.9px; height:4.9px; --o:0.268; opacity:0.268; animation:pdriftA 3.8s ease-in-out -3.6s infinite, ppulse 3.3s ease-in-out -2.4s infinite;"></i><i style="left:85.00%; top:70.20%; width:4.8px; height:4.8px; --o:0.169; opacity:0.169; animation:pdriftB 7.1s ease-in-out -6.4s infinite, ppulse 5.0s ease-in-out -0.2s infinite;"></i><i style="left:81.21%; top:4.73%; width:5.6px; height:5.6px; --o:0.207; opacity:0.207; animation:pdriftC 6.5s ease-in-out -4.9s infinite, ppulse 3.7s ease-in-out -0.8s infinite;"></i><i style="left:43.79%; top:7.49%; width:5.8px; height:5.8px; --o:0.25; opacity:0.25; animation:pdriftA 5.1s ease-in-out -2.4s infinite, ppulse 4.8s ease-in-out -2.8s infinite;"></i><i style="left:39.89%; top:77.12%; width:4.7px; height:4.7px; --o:0.207; opacity:0.207; animation:pdriftB 4.4s ease-in-out -4.4s infinite, ppulse 2.9s ease-in-out -0.1s infinite;"></i><i style="left:40.75%; top:84.50%; width:4.6px; height:4.6px; --o:0.246; opacity:0.246; animation:pdriftA 6.8s ease-in-out -2.4s infinite, ppulse 3.9s ease-in-out -0.7s infinite;"></i><i style="left:59.45%; top:28.51%; width:2.6px; height:2.6px; --o:0.389; opacity:0.389; animation:pdriftB 6.9s ease-in-out -5.8s infinite, ppulse 3.8s ease-in-out -3.7s infinite;"></i><i style="left:73.39%; top:55.38%; width:2.4px; height:2.4px; --o:0.312; opacity:0.312; animation:pdriftC 3.5s ease-in-out -1.1s infinite, ppulse 4.7s ease-in-out -4.4s infinite;"></i><i style="left:48.03%; top:67.47%; width:6.3px; height:6.3px; --o:0.356; opacity:0.356; animation:pdriftB 4.9s ease-in-out -3.7s infinite, ppulse 3.9s ease-in-out -3.8s infinite;"></i><i style="left:13.73%; top:31.54%; width:3.6px; height:3.6px; --o:0.268; opacity:0.268; animation:pdriftA 4.3s ease-in-out -2.1s infinite, ppulse 4.6s ease-in-out -0.9s infinite;"></i><i style="left:73.82%; top:60.69%; width:5.4px; height:5.4px; --o:0.273; opacity:0.273; animation:pdriftC 7.0s ease-in-out -2.6s infinite, ppulse 2.8s ease-in-out -1.3s infinite;"></i><i style="left:10.64%; top:6.24%; width:5.3px; height:5.3px; --o:0.243; opacity:0.243; animation:pdriftA 5.0s ease-in-out -4.2s infinite, ppulse 5.3s ease-in-out -4.6s infinite;"></i><i style="left:4.53%; top:80.88%; width:2.6px; height:2.6px; --o:0.385; opacity:0.385; animation:pdriftB 3.8s ease-in-out -2.0s infinite, ppulse 2.9s ease-in-out -0.4s infinite;"></i><i style="left:2.86%; top:88.17%; width:2.5px; height:2.5px; --o:0.221; opacity:0.221; animation:pdriftC 3.5s ease-in-out -2.5s infinite, ppulse 4.7s ease-in-out -1.2s infinite;"></i><i style="left:89.43%; top:88.82%; width:6.2px; height:6.2px; --o:0.338; opacity:0.338; animation:pdriftC 5.3s ease-in-out -3.1s infinite, ppulse 4.7s ease-in-out -3.5s infinite;"></i><i style="left:33.79%; top:46.80%; width:2.6px; height:2.6px; --o:0.341; opacity:0.341; animation:pdriftA 4.6s ease-in-out -4.0s infinite, ppulse 3.6s ease-in-out -1.5s infinite;"></i><i style="left:37.69%; top:0.66%; width:2.7px; height:2.7px; --o:0.2; opacity:0.2; animation:pdriftA 4.4s ease-in-out -3.8s infinite, ppulse 3.4s ease-in-out -0.9s infinite;"></i><i style="left:85.29%; top:84.43%; width:3.7px; height:3.7px; --o:0.285; opacity:0.285; animation:pdriftC 5.6s ease-in-out -4.8s infinite, ppulse 2.3s ease-in-out -0.6s infinite;"></i><i style="left:64.14%; top:19.49%; width:17.9px; height:17.9px; --o:0.107; opacity:0.107; filter:blur(1px); animation:pdriftA 7.9s ease-in-out -4.0s infinite;"></i><i style="left:69.90%; top:84.47%; width:21.4px; height:21.4px; --o:0.108; opacity:0.108; filter:blur(1px); animation:pdriftA 11.7s ease-in-out -8.2s infinite;"></i><i style="left:32.35%; top:49.52%; width:14.5px; height:14.5px; --o:0.1; opacity:0.1; filter:blur(1px); animation:pdriftA 8.8s ease-in-out -4.5s infinite;"></i><i style="left:76.23%; top:84.25%; width:12.2px; height:12.2px; --o:0.076; opacity:0.076; filter:blur(1px); animation:pdriftA 8.4s ease-in-out -1.7s infinite;"></i><i style="left:4.38%; top:85.14%; width:18.4px; height:18.4px; --o:0.084; opacity:0.084; filter:blur(1px); animation:pdriftA 10.7s ease-in-out -6.6s infinite;"></i><i style="left:52.51%; top:44.19%; width:23.8px; height:23.8px; --o:0.06; opacity:0.06; filter:blur(1px); animation:pdriftA 11.7s ease-in-out -8.1s infinite;"></i><i style="left:75.33%; top:81.38%; width:17.0px; height:17.0px; --o:0.093; opacity:0.093; filter:blur(1px); animation:pdriftA 11.5s ease-in-out -8.0s infinite;"></i><i style="left:28.37%; top:6.28%; width:24.5px; height:24.5px; --o:0.102; opacity:0.102; filter:blur(1px); animation:pdriftA 12.0s ease-in-out -8.1s infinite;"></i><i style="left:41.16%; top:41.52%; width:16.0px; height:16.0px; --o:0.108; opacity:0.108; filter:blur(1px); animation:pdriftA 11.8s ease-in-out -7.4s infinite;"></i></div>
+
+
+  <div style="height:5px; background:var(--grad);"></div>
+
+  <nav style="display:flex; align-items:center; justify-content:space-between; padding:0 80px; height:88px; border-bottom:1px solid var(--border);">
+    <div style="font-family:var(--font-display); font-weight:800; font-size:20px; color:var(--text);">Jack<span style="color:var(--p-main);">.</span>Verbel</div>
+    <div style="display:flex; align-items:center; gap:40px;">
+      <a href="index.html" style="font-family:var(--font-body); font-weight:700; font-size:14px; text-decoration:none; color:var(--text); border-bottom:3px solid var(--p-main); padding-bottom:28px;">Work</a>
+      <a href="about.html" style="font-family:var(--font-body); font-weight:700; font-size:14px; text-decoration:none; color:var(--text-muted); border-bottom:3px solid transparent; padding-bottom:28px;">About</a>
+      <a href="contact.html" style="font-family:var(--font-body); font-weight:700; font-size:14px; text-decoration:none; color:var(--text-muted); border-bottom:3px solid transparent; padding-bottom:28px;">Contact</a>
+    </div>
+  </nav>
+
+  <div class="wrap" style="padding-top:32px;">
+    <span style="font-family:var(--font-body); font-size:13px; color:var(--text-muted); font-weight:600;">&larr; <a href="index.html" style="color:var(--text-muted); text-decoration:none;">Work</a> / HUGO Watch</span>
+  </div>
+
+  <section class="wrap" style="padding:40px 0 88px 0; display:grid; grid-template-columns:1fr 460px; gap:64px; align-items:center;">
+    <div>
+      <span class="eyebrow">Student Collaboration &mdash; Movado Group</span>
+      <h1 style="font-family:var(--font-display); font-weight:800; font-size:52px; line-height:1.1; color:var(--p-main); margin:18px 0 24px 0;">HUGO Three-Hand<br>Watch Design</h1>
+      <p style="font-family:var(--font-body); font-size:18px; line-height:1.7; color:var(--text-muted); margin:0 0 32px 0;">
+        A three-hand analog watch for HUGO, aimed at a younger, unisex audience &mdash; taken from concept to final rendered pieces with Movado's design team.
+      </p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <span class="badge" style="border-color:var(--p-main); color:var(--p-main);">Movado Group</span>
+        <span class="badge" style="border-color:var(--p-mid); color:var(--p-deep);">Sep &ndash; Nov 2025</span>
+        <span class="badge" style="border-color:var(--p-soft); color:var(--p-main);">SolidWorks</span>
+        <span class="badge" style="border-color:var(--p-deep); color:var(--p-deep);">KeyShot</span>
+        <span class="badge" style="border-color:var(--p-mid); color:var(--p-main);">Adobe Illustrator</span>
+      </div>
+    </div>
+    <div class="card" style="overflow:hidden;">
+      <img src="assets/hero_angle.jpg" alt="Final HUGO watch, black case with red bezel" style="width:100%; display:block;">
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-bottom:96px; display:grid; grid-template-columns:1fr 360px; gap:80px; align-items:start;">
+    <div>
+      <h2 style="font-family:var(--font-display); font-weight:800; font-size:26px; color:var(--p-main); margin:0 0 18px 0;">The Brief</h2>
+      <p style="font-family:var(--font-body); font-size:17px; line-height:1.8; color:var(--text-muted); margin:0;">
+        Appeal to a younger generation, and work equally well on any wrist. I chose a classic three-hand movement &mdash; simple and versatile &mdash; so proportion, case detailing, and finish carry the personality instead of a busy dial. Regular reviews with Movado's designers and executives shaped each round of refinement.
+      </p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:24px;">
+      <div class="card" style="padding:28px;">
+        <div style="font-family:var(--font-display); font-weight:800; font-size:13px; letter-spacing:0.3px; color:var(--p-main); text-transform:uppercase; margin-bottom:10px;">Recognition</div>
+        <p style="font-family:var(--font-body); font-size:14px; line-height:1.6; color:var(--text-muted); margin:0;">4th Place &mdash; Movado Watch Design Competition, among peers.</p>
+      </div>
+      <div class="card" style="padding:28px;">
+        <div style="font-family:var(--font-display); font-weight:800; font-size:13px; letter-spacing:0.3px; color:var(--p-deep); text-transform:uppercase; margin-bottom:10px;">Spec</div>
+        <div style="font-family:var(--font-body); font-size:13px; color:var(--text-muted); line-height:1.9; font-weight:600;">Movement: VX32E<br>Case: 39mm &times; 9.99mm<br>Dial opening: 33mm</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-bottom:96px;">
+    <span class="eyebrow" style="color:var(--p-mid);">Research &amp; Ideation</span>
+    <h2 class="section-title">Moodboard &amp; Sketching</h2>
+    <p class="lede">
+      A moodboard of consumer electronics, chronographs, and street style set the younger, unisex tone. From there I sketched six case, lug, and crown configurations.
+    </p>
+    <div class="card" style="padding:20px; margin-bottom:24px;">
+      <img src="assets/moodboard.jpg" alt="Research moodboard of consumer electronics, chronograph watches, and street style references" style="width:100%; display:block; border-radius:10px;">
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:20px;">
+      <div class="card" style="padding:12px;"><img src="assets/sketch1.jpg" alt="Concept 1 case sketch" style="width:100%; display:block; border-radius:8px;"></div>
+      <div class="card" style="padding:12px;"><img src="assets/sketch2.jpg" alt="Concept 2 case sketch" style="width:100%; display:block; border-radius:8px;"></div>
+      <div class="card" style="padding:12px;"><img src="assets/sketch3.jpg" alt="Concept 3 case sketch" style="width:100%; display:block; border-radius:8px;"></div>
+      <div class="card" style="padding:12px;"><img src="assets/sketch4.jpg" alt="Concept 4 case sketch" style="width:100%; display:block; border-radius:8px;"></div>
+      <div class="card" style="padding:12px;"><img src="assets/sketch5.jpg" alt="Concept 5 case sketch" style="width:100%; display:block; border-radius:8px;"></div>
+      <div class="card" style="padding:12px;"><img src="assets/sketch6.jpg" alt="Concept 6 case sketch" style="width:100%; display:block; border-radius:8px;"></div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-bottom:96px;">
+    <span class="eyebrow" style="color:var(--p-deep);">Phase 3</span>
+    <h2 class="section-title">Concept Renders</h2>
+    <p class="lede">
+      Three directions went to review &mdash; same case architecture, different dial language and color story.
+    </p>
+    <div style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:28px;">
+
+      <div class="card" style="overflow:hidden; display:flex; flex-direction:column;">
+        <div class="concept-img"><img src="assets/concept1.jpg" alt="Concept 1 &mdash; white case, purple bezel, radar-ring dial"></div>
+        <div style="padding:24px;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+            <div style="width:12px; height:12px; border-radius:50%; background:#c9c9c9; flex-shrink:0;"></div>
+            <span style="font-family:var(--font-display); font-weight:700; font-size:14px; color:var(--text);">Concept 01</span>
+          </div>
+          <p style="font-family:var(--font-body); font-size:14px; line-height:1.6; color:var(--text-muted); margin:0;">White case, violet gradient bezel &mdash; the radar-ring dial at its most graphic.</p>
+        </div>
+      </div>
+
+      <div class="card" style="overflow:hidden; display:flex; flex-direction:column;">
+        <div class="concept-img"><img src="assets/concept2.jpg" alt="Concept 2 &mdash; matte black case, red gradient bezel, monogram-texture dial"></div>
+        <div style="padding:24px;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+            <div style="width:12px; height:12px; border-radius:50%; background:#3d3d3d; flex-shrink:0;"></div>
+            <span style="font-family:var(--font-display); font-weight:700; font-size:14px; color:var(--text);">Concept 02</span>
+          </div>
+          <p style="font-family:var(--font-body); font-size:14px; line-height:1.6; color:var(--text-muted); margin:0;">Matte black case, red-to-pink bezel, and a repeating HUGO-monogram dial texture.</p>
+        </div>
+      </div>
+
+      <div class="card" style="overflow:hidden; display:flex; flex-direction:column;">
+        <div class="concept-img"><img src="assets/concept3.jpg" alt="Concept 3 &mdash; navy case with rose-gold bezel and dual-ring dial"></div>
+        <div style="padding:24px;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+            <div style="width:12px; height:12px; border-radius:50%; background:#8f8f8f; flex-shrink:0;"></div>
+            <span style="font-family:var(--font-display); font-weight:700; font-size:14px; color:var(--text);">Concept 03</span>
+          </div>
+          <p style="font-family:var(--font-body); font-size:14px; line-height:1.6; color:var(--text-muted); margin:0;">Navy case, rose-gold bezel, and a quieter dual-ring dial &mdash; the most understated.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-bottom:96px;">
+    <span class="eyebrow">Final Design</span>
+    <h2 class="section-title">Black &amp; Red</h2>
+    <p class="lede">
+      The chosen design: a black case with a color-blocked red bezel, radar-ring dial, and a HUGO-patterned strap underside.
+    </p>
+    <div class="card" style="padding:20px; margin:0 auto 12px auto; max-width:860px;">
+      <video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" preload="auto" style="width:100%; aspect-ratio:1100/1038; display:block; border-radius:10px; background:#fff;" src="assets/watch-animation.mp4"></video>
+    </div>
+    <p style="font-family:var(--font-body); font-size:13px; color:var(--text-muted); margin:0 0 32px 0; font-weight:600; text-align:center;">Assembly animation &mdash; KeyShot</p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:start; margin-bottom:24px;">
+      <div class="card" style="padding:20px;">
+        <img src="assets/angle_strap.jpg" alt="Final watch on its strap, showing the patterned underside" style="width:100%; display:block; border-radius:10px;">
+      </div>
+      <div class="card" style="padding:20px;">
+        <img src="assets/side_profile.jpg" alt="Side profile showing case thickness and crown" style="width:100%; display:block; border-radius:10px;">
+      </div>
+    </div>
+    <div class="card" style="padding:20px; display:flex; align-items:center; justify-content:center; margin-bottom:40px;">
+      <img src="assets/exploded.jpg" alt="Exploded view of the case, dial, movement ring, crown, and strap" style="max-height:520px; display:block; border-radius:10px;">
+    </div>
+
+    <h3 style="font-family:var(--font-display); font-weight:700; font-size:22px; color:var(--p-main); margin:0 0 20px 0;">Four Colorways</h3>
+    <div class="card" style="padding:24px;">
+      <img src="assets/lineup.jpg" alt="Four colorways: black/red, navy/rose-gold, white/purple, white/gold" style="width:100%; display:block; border-radius:10px;">
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-bottom:96px;">
+    <h2 style="font-family:var(--font-display); font-weight:800; font-size:26px; color:var(--p-main); margin:0 0 28px 0;">Process</h2>
+    <div class="steps-row" style="display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:20px; position:relative;">
+      <div style="position:absolute; top:8px; left:0; right:0; height:1px; background:var(--border);"></div>
+      <div class="step"><div style="width:16px; height:16px; border-radius:50%; background:var(--p-light); z-index:1;"></div><span class="step-num" style="color:var(--p-soft);">01</span><span style="font-family:var(--font-body); font-size:14px; color:var(--text); font-weight:600;">Moodboard &amp; Research</span></div>
+      <div class="step"><div style="width:16px; height:16px; border-radius:50%; background:var(--p-soft); z-index:1;"></div><span class="step-num" style="color:var(--p-mid);">02</span><span style="font-family:var(--font-body); font-size:14px; color:var(--text); font-weight:600;">Sketch Ideation</span></div>
+      <div class="step"><div style="width:16px; height:16px; border-radius:50%; background:var(--p-mid); z-index:1;"></div><span class="step-num" style="color:var(--p-mid);">03</span><span style="font-family:var(--font-body); font-size:14px; color:var(--text); font-weight:600;">3 Concepts &amp; Review</span></div>
+      <div class="step"><div style="width:16px; height:16px; border-radius:50%; background:var(--p-main); z-index:1;"></div><span class="step-num" style="color:var(--p-main);">04</span><span style="font-family:var(--font-body); font-size:14px; color:var(--text); font-weight:600;">CAD in SolidWorks</span></div>
+      <div class="step"><div style="width:16px; height:16px; border-radius:50%; background:var(--p-deep); z-index:1;"></div><span class="step-num" style="color:var(--p-deep);">05</span><span style="font-family:var(--font-body); font-size:14px; color:var(--text); font-weight:600;">Final KeyShot Renders</span></div>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid var(--border); padding:32px 80px; display:flex; align-items:center; justify-content:space-between; font-family:var(--font-body); font-size:13px; color:var(--text-muted);">
+    <div>&copy; 2026 Jack Verbel</div>
+    <div style="display:flex; gap:24px; align-items:center;">
+      <a href="mailto:Jverbel730@gmail.com" style="color:var(--p-main); text-decoration:none; font-weight:600;">Jverbel730@gmail.com</a>
+      <a href="https://www.linkedin.com/in/jack-verbel-5a95a12a8/" target="_blank" rel="noopener" style="color:var(--p-main); text-decoration:none; font-weight:600;">LinkedIn</a>
+      <span>Middletown, New Jersey</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
