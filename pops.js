@@ -96,10 +96,17 @@
     });
   }
 
-  function init() {
-    var nodes = document.querySelectorAll('[data-pop]');
-    for (var i = 0; i < nodes.length; i++) wire(nodes[i]);
+  function init(root) {
+    var nodes = (root || document).querySelectorAll('[data-pop]');
+    for (var i = 0; i < nodes.length; i++) {
+      if (nodes[i].__popWired) continue;
+      nodes[i].__popWired = 1;
+      wire(nodes[i]);
+    }
   }
+
+  // content injected later (the locked case study) re-uses this
+  window.__wirePops = init;
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
