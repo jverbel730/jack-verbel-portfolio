@@ -107,3 +107,91 @@
     init();
   }
 })();
+
+/* Custom cursor — a soft crosshair: centre dot, four pill ticks, and a ring
+   that trails behind. Grows over anything interactive, springs on click.
+   Native cursor is only hidden once this runs, so no-JS keeps its arrow. */
+(function () {
+  'use strict';
+
+  if (!window.matchMedia) return;
+  if (window.matchMedia('(hover: none)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var core, ring, x = -200, y = -200, rx = -200, ry = -200, raf = 0, started = false;
+
+  function build() {
+    core = document.createElement('div');
+    core.id = 'xcur-core';
+    core.setAttribute('aria-hidden', 'true');
+    core.innerHTML = '<i class="xc-dot"></i><i class="xc-t xc-n"></i>' +
+                     '<i class="xc-t xc-s"></i><i class="xc-t xc-w"></i><i class="xc-t xc-e"></i>';
+
+    ring = document.createElement('div');
+    ring.id = 'xcur-ring';
+    ring.setAttribute('aria-hidden', 'true');
+    ring.innerHTML = '<i class="xc-ring"></i>';
+
+    document.body.appendChild(ring);
+    document.body.appendChild(core);
+    document.documentElement.classList.add('xcur-on');
+  }
+
+  function loop() {
+    rx += (x - rx) * 0.19;
+    ry += (y - ry) * 0.19;
+    core.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0)';
+    ring.style.transform = 'translate3d(' + rx + 'px,' + ry + 'px,0)';
+    raf = requestAnimationFrame(loop);
+  }
+
+  var HOT = 'a,button,[data-pop],.card,input,textarea,select,summary,[role="button"]';
+
+  function onMove(e) {
+    x = e.clientX; y = e.clientY;
+    if (!started) {
+      started = true;
+      rx = x; ry = y;
+      core.style.opacity = ring.style.opacity = '1';
+      raf = requestAnimationFrame(loop);
+    }
+    var hot = e.target && e.target.closest && e.target.closest(HOT);
+    core.classList.toggle('is-hot', !!hot);
+    ring.classList.toggle('is-hot', !!hot);
+  }
+
+  function ripple() {
+    var r = document.createElement('i');
+    r.className = 'xc-ripple';
+    r.style.left = x + 'px';
+    r.style.top = y + 'px';
+    document.body.appendChild(r);
+    setTimeout(function () { if (r.parentNode) r.parentNode.removeChild(r); }, 620);
+  }
+
+  function start() {
+    build();
+    document.addEventListener('mousemove', onMove, { passive: true });
+    document.addEventListener('mousedown', function () {
+      core.classList.add('is-down');
+      ring.classList.add('is-down');
+      ripple();
+    });
+    document.addEventListener('mouseup', function () {
+      core.classList.remove('is-down');
+      ring.classList.remove('is-down');
+    });
+    document.addEventListener('mouseleave', function () {
+      core.style.opacity = ring.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', function () {
+      core.style.opacity = ring.style.opacity = '1';
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
+})();

@@ -104,3 +104,112 @@ a[data-pop], [data-pop] a{ cursor:pointer; }
 @media (max-width: 640px){
   .write-pen{ width:27px; height:27px; bottom:7px; margin-left:-6px; }
 }
+
+/* ---------- custom cursor ---------- */
+html.xcur-on, html.xcur-on *{ cursor:none !important; }
+
+#xcur-core, #xcur-ring{
+  position:fixed; top:0; left:0; width:0; height:0; z-index:9999;
+  pointer-events:none; opacity:0; will-change:transform;
+}
+#xcur-core i, #xcur-ring i{ position:absolute; display:block; }
+
+.xc-dot{
+  width:5px; height:5px; margin:-2.5px 0 0 -2.5px; border-radius:99px;
+  background:var(--p-main);
+  transition:width .2s cubic-bezier(.34,1.4,.5,1), height .2s cubic-bezier(.34,1.4,.5,1),
+             margin .2s cubic-bezier(.34,1.4,.5,1), opacity .2s ease;
+}
+.xc-t{
+  background:var(--p-main); border-radius:99px; opacity:.9;
+  transition:transform .26s cubic-bezier(.34,1.5,.46,1), opacity .2s ease;
+}
+.xc-n, .xc-s{ width:2.6px; height:8px; margin-left:-1.3px; }
+.xc-n{ margin-top:-17px; }
+.xc-s{ margin-top:9px; }
+.xc-w, .xc-e{ height:2.6px; width:8px; margin-top:-1.3px; }
+.xc-w{ margin-left:-17px; }
+.xc-e{ margin-left:9px; }
+
+.xc-ring{
+  width:30px; height:30px; margin:-15px 0 0 -15px; border-radius:99px;
+  border:1.6px solid var(--p-mid); opacity:.5;
+  transition:width .28s cubic-bezier(.34,1.4,.5,1), height .28s cubic-bezier(.34,1.4,.5,1),
+             margin .28s cubic-bezier(.34,1.4,.5,1), opacity .22s ease,
+             background-color .22s ease, border-color .22s ease;
+}
+
+/* over something you can click: everything opens up */
+#xcur-core.is-hot .xc-n{ transform:translateY(-9px); }
+#xcur-core.is-hot .xc-s{ transform:translateY(9px); }
+#xcur-core.is-hot .xc-w{ transform:translateX(-9px); }
+#xcur-core.is-hot .xc-e{ transform:translateX(9px); }
+#xcur-core.is-hot .xc-dot{ width:7px; height:7px; margin:-3.5px 0 0 -3.5px; }
+#xcur-ring.is-hot .xc-ring{
+  width:40px; height:40px; margin:-20px 0 0 -20px;
+  opacity:.34; border-color:var(--p-main); background:var(--p-light);
+}
+
+/* click: the ticks tuck in, then spring back */
+#xcur-core.is-down .xc-n{ transform:translateY(7px); }
+#xcur-core.is-down .xc-s{ transform:translateY(-7px); }
+#xcur-core.is-down .xc-w{ transform:translateX(7px); }
+#xcur-core.is-down .xc-e{ transform:translateX(-7px); }
+#xcur-core.is-down .xc-dot{ width:9px; height:9px; margin:-4.5px 0 0 -4.5px; }
+#xcur-ring.is-down .xc-ring{ width:23px; height:23px; margin:-11.5px 0 0 -11.5px; opacity:.8; }
+
+.xc-ripple{
+  position:fixed; z-index:9998; pointer-events:none; display:block;
+  width:20px; height:20px; margin:-10px 0 0 -10px; border-radius:99px;
+  border:2px solid var(--p-main);
+  animation:xcRipple .6s cubic-bezier(.2,.8,.3,1) forwards;
+}
+@keyframes xcRipple{
+  from{ opacity:.55; transform:scale(.4); }
+  to  { opacity:0;   transform:scale(2.6); }
+}
+
+@media (hover: none), (prefers-reduced-motion: reduce){
+  html.xcur-on, html.xcur-on *{ cursor:auto !important; }
+  #xcur-core, #xcur-ring, .xc-ripple{ display:none !important; }
+}
+
+/* ---------- deep-forest RPG theme ---------- */
+body{
+  background:
+    radial-gradient(1200px 660px at 50% -12%, oklch(27% 0.05 150) 0%, transparent 72%),
+    var(--bg);
+  color:var(--text);
+}
+body > div[style*="isolation:isolate"]{ background:transparent !important; }
+
+/* Cinzel wants air, not the tight tracking the old sans had */
+h1{ letter-spacing:0.012em !important; }
+h2, h3{ letter-spacing:0.014em; }
+
+nav{ border-bottom-color:oklch(40% 0.05 140) !important; }
+footer{ border-top-color:oklch(40% 0.05 140) !important; }
+
+.card{
+  border-color:oklch(42% 0.055 130) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.045);
+}
+.card:hover{ box-shadow:0 22px 48px rgba(0,0,0,0.45), 0 0 0 1px var(--p-deep); }
+
+/* the renders are lit plates set into the dark page */
+.card:has(> img), .card:has(> video), .card:has(> a > img){
+  background:var(--plate) !important;
+  border-color:var(--plate-edge) !important;
+  box-shadow:0 3px 0 rgba(0,0,0,0.28), inset 0 0 0 1px rgba(255,255,255,0.55);
+}
+.card:has(> img):hover, .card:has(> video):hover{
+  box-shadow:0 22px 48px rgba(0,0,0,0.45), 0 0 0 1px var(--p-main);
+}
+.card:has(> img) p, .card:has(> video) p{ color:var(--plate-ink) !important; }
+.concept-img{ background:var(--plate) !important; }
+
+/* A few sections set `padding` as a shorthand inline, which wiped the
+   .wrap side padding on desktop. Restore it above the tablet breakpoint. */
+@media (min-width: 1001px){
+  .wrap{ padding-left:80px !important; padding-right:80px !important; }
+}

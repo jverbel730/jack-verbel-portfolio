@@ -11,40 +11,47 @@
 <meta property="og:description" content="A pneumatic impact wrench with the full exterior designed from scratch — shop research, foam models, CAD and final renders.">
 <meta property="og:image" content="/assets/hero_angle.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 400%22%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22190%22 fill=%22%23fff%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22150%22 fill=%22none%22 stroke=%22%23f97316%22 stroke-width=%2244%22 stroke-dasharray=%22785 157%22 transform=%22rotate(-10 200 200)%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%2296%22 fill=%22none%22 stroke=%22%23fb923c%22 stroke-width=%2240%22 stroke-dasharray=%22502 100%22 transform=%22rotate(55 200 200)%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%2226%22 fill=%22%23c2410c%22/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 400%22%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22190%22 fill=%22%231d2b22%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22150%22 fill=%22none%22 stroke=%22%23e0b552%22 stroke-width=%2244%22 stroke-dasharray=%22785 157%22 transform=%22rotate(-10 200 200)%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%2296%22 fill=%22none%22 stroke=%22%23f0d489%22 stroke-width=%2240%22 stroke-dasharray=%22502 100%22 transform=%22rotate(55 200 200)%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%2226%22 fill=%22%23c2953c%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
 <style>
 :root{
-      --bg: oklch(99.5% 0 0);
-      --surface: oklch(96.5% 0 0);
-      --panel: oklch(100% 0 0);
-      --border: oklch(89% 0 0);
-      --text: oklch(17% 0 0);
-      --text-muted: oklch(45% 0 0);
-      --p-deep: oklch(47% 0.18 42);
-      --p-main: oklch(61% 0.22 45);
-      --p-mid: oklch(72% 0.17 52);
-      --p-soft: oklch(83% 0.11 60);
-      --p-light: oklch(92% 0.055 65);
+      /* deep-forest RPG palette */
+      --bg: oklch(20% 0.032 152);
+      --surface: oklch(24.5% 0.036 152);
+      --panel: oklch(27.5% 0.034 152);
+      --border: oklch(38% 0.045 145);
+      --text: oklch(95% 0.014 95);
+      --text-muted: oklch(78% 0.022 105);
+      --p-deep: oklch(63% 0.115 82);
+      --p-main: oklch(81% 0.135 88);
+      --p-mid: oklch(87% 0.10 95);
+      --p-soft: oklch(92% 0.06 100);
+      --p-light: oklch(52% 0.07 118);
+      /* lit panels the product renders sit on */
+      --plate: oklch(99.4% 0.003 95);
+      --plate-ink: oklch(28% 0.03 150);
+      --plate-edge: oklch(70% 0.09 88);
+      --mote: oklch(86% 0.11 100);
+      --btn-ink: oklch(20% 0.03 150);
       --grad: linear-gradient(90deg, var(--p-deep), var(--p-main), var(--p-mid), var(--p-soft));
-      --font-display: 'Poppins', sans-serif;
-      --font-body: 'Poppins', sans-serif;
+      --font-display: 'Cinzel', 'Palatino Linotype', Georgia, serif;
+      --font-body: 'Spectral', Georgia, 'Times New Roman', serif;
     }
     *{ box-sizing:border-box; }
     body{ margin:0; background:var(--bg); font-family:var(--font-body); text-wrap:pretty; }
     a{ color:var(--p-main); }
     a:hover{ color:var(--p-deep); }
     .pfield{ position:absolute; inset:0; z-index:-1; overflow:hidden; pointer-events:none; }
-    .pfield i{ position:absolute; display:block; border-radius:50%; background:oklch(66% 0.22 47); will-change:transform; }
+    .pfield i{ position:absolute; display:block; border-radius:50%; background:var(--mote); will-change:transform; }
     @keyframes pdriftA{ 0%,100%{ transform:translate3d(0,0,0); } 50%{ transform:translate3d(48px,-92px,0); } }
     @keyframes pdriftB{ 0%,100%{ transform:translate3d(0,0,0); } 50%{ transform:translate3d(-58px,-74px,0); } }
     @keyframes pdriftC{ 0%,100%{ transform:translate3d(0,0,0); } 50%{ transform:translate3d(34px,70px,0); } }
     @keyframes ppulse{ 0%,100%{ opacity:var(--o); } 50%{ opacity:calc(var(--o) * 0.3); } }
     @media (prefers-reduced-motion: reduce){ .pfield i{ animation:none !important; } }
     .wrap{ max-width:1280px; margin:0 auto; padding:0 80px; }
-    .badge{ font-family:var(--font-body); font-size:12px; font-weight:700; padding:7px 16px; border-radius:999px; background:#fff; border:1.5px solid var(--p-light); }
+    .badge{ font-family:var(--font-body); font-size:12px; font-weight:700; padding:7px 16px; border-radius:999px; background:rgba(255,255,255,0.05); border:1.5px solid var(--p-light); }
     .step{ display:flex; flex-direction:column; gap:10px; }
     .step-num{ font-family:var(--font-display); font-weight:800; font-size:15px; }
     .section-title{ font-family:var(--font-display); font-weight:800; font-size:32px; color:var(--p-main); margin:14px 0 12px 0; }
@@ -150,58 +157,58 @@
       <svg viewBox="0 0 1120 620" width="100%" xmlns="http://www.w3.org/2000/svg" style="display:block; max-width:100%;">
         <path d="M 430,286 C 320,286 296,62 186,62" stroke="var(--p-deep)" stroke-width="2.5" fill="none" opacity="0.45"/>
         <rect x="40" y="42" width="146" height="40" rx="20" fill="var(--p-deep)"/>
-        <text x="113" y="68" text-anchor="middle" font-family="Poppins, sans-serif" font-size="17" font-weight="700" fill="#fff" letter-spacing="0.6">ERGONOMICS</text>
+        <text x="113" y="68" text-anchor="middle" font-family="Spectral, Georgia, serif" font-size="17" font-weight="700" fill="#16221c" letter-spacing="0.6">ERGONOMICS</text>
         <circle cx="52" cy="111" r="4.5" fill="var(--p-deep)" opacity="0.75"/>
-        <text x="70" y="116" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Grip</text>
+        <text x="70" y="116" text-anchor="start" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Grip</text>
         <circle cx="52" cy="142" r="4.5" fill="var(--p-deep)" opacity="0.75"/>
-        <text x="70" y="147" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Texture</text>
+        <text x="70" y="147" text-anchor="start" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Texture</text>
         <circle cx="52" cy="173" r="4.5" fill="var(--p-deep)" opacity="0.75"/>
-        <text x="70" y="178" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Curvature</text>
+        <text x="70" y="178" text-anchor="start" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Curvature</text>
         <circle cx="52" cy="204" r="4.5" fill="var(--p-deep)" opacity="0.75"/>
-        <text x="70" y="209" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Weight distribution</text>
+        <text x="70" y="209" text-anchor="start" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Weight distribution</text>
         <circle cx="52" cy="235" r="4.5" fill="var(--p-deep)" opacity="0.75"/>
-        <text x="70" y="240" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Compactness</text>
+        <text x="70" y="240" text-anchor="start" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Compactness</text>
         <path d="M 690,286 C 800,286 814,62 924,62" stroke="var(--p-main)" stroke-width="2.5" fill="none" opacity="0.45"/>
         <rect x="924" y="42" width="156" height="40" rx="20" fill="var(--p-main)"/>
-        <text x="1002" y="68" text-anchor="middle" font-family="Poppins, sans-serif" font-size="17" font-weight="700" fill="#fff" letter-spacing="0.6">PERFORMANCE</text>
+        <text x="1002" y="68" text-anchor="middle" font-family="Spectral, Georgia, serif" font-size="17" font-weight="700" fill="#16221c" letter-spacing="0.6">PERFORMANCE</text>
         <circle cx="1068" cy="111" r="4.5" fill="var(--p-main)" opacity="0.75"/>
-        <text x="1050" y="116" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Fastening strength</text>
+        <text x="1050" y="116" text-anchor="end" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Fastening strength</text>
         <circle cx="1068" cy="142" r="4.5" fill="var(--p-main)" opacity="0.75"/>
-        <text x="1050" y="147" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Power and speed</text>
+        <text x="1050" y="147" text-anchor="end" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Power and speed</text>
         <circle cx="1068" cy="173" r="4.5" fill="var(--p-main)" opacity="0.75"/>
-        <text x="1050" y="178" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Efficiency</text>
+        <text x="1050" y="178" text-anchor="end" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Efficiency</text>
         <circle cx="1068" cy="204" r="4.5" fill="var(--p-main)" opacity="0.75"/>
-        <text x="1050" y="209" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Consistency</text>
+        <text x="1050" y="209" text-anchor="end" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Consistency</text>
         <circle cx="1068" cy="235" r="4.5" fill="var(--p-main)" opacity="0.75"/>
-        <text x="1050" y="240" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Durability</text>
+        <text x="1050" y="240" text-anchor="end" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Durability</text>
         <path d="M 430,314 C 320,314 255,408 145,408" stroke="var(--p-mid)" stroke-width="2.5" fill="none" opacity="0.45"/>
         <rect x="40" y="388" width="105" height="40" rx="20" fill="var(--p-mid)"/>
-        <text x="93" y="414" text-anchor="middle" font-family="Poppins, sans-serif" font-size="17" font-weight="700" fill="#fff" letter-spacing="0.6">SAFETY</text>
+        <text x="93" y="414" text-anchor="middle" font-family="Spectral, Georgia, serif" font-size="17" font-weight="700" fill="#16221c" letter-spacing="0.6">SAFETY</text>
         <circle cx="52" cy="457" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="70" y="462" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Trigger design</text>
+        <text x="70" y="462" text-anchor="start" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Trigger design</text>
         <circle cx="52" cy="488" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="70" y="493" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Good lighting</text>
+        <text x="70" y="493" text-anchor="start" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Good lighting</text>
         <circle cx="52" cy="519" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="70" y="524" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Noise reduction</text>
+        <text x="70" y="524" text-anchor="start" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Noise reduction</text>
         <circle cx="52" cy="550" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="70" y="555" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Vibration reduction</text>
+        <text x="70" y="555" text-anchor="start" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Vibration reduction</text>
         <circle cx="52" cy="581" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="70" y="586" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">No confusion</text>
+        <text x="70" y="586" text-anchor="start" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">No confusion</text>
         <path d="M 690,314 C 800,314 773,408 883,408" stroke="var(--p-mid)" stroke-width="2.5" fill="none" opacity="0.45"/>
         <rect x="883" y="388" width="197" height="40" rx="20" fill="var(--p-mid)"/>
-        <text x="982" y="414" text-anchor="middle" font-family="Poppins, sans-serif" font-size="17" font-weight="700" fill="#fff" letter-spacing="0.6">WANTED FEATURES</text>
+        <text x="982" y="414" text-anchor="middle" font-family="Spectral, Georgia, serif" font-size="17" font-weight="700" fill="#16221c" letter-spacing="0.6">WANTED FEATURES</text>
         <circle cx="1068" cy="457" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="1050" y="462" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">LED lights</text>
+        <text x="1050" y="462" text-anchor="end" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">LED lights</text>
         <circle cx="1068" cy="488" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="1050" y="493" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Socket connection system</text>
+        <text x="1050" y="493" text-anchor="end" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Socket connection system</text>
         <circle cx="1068" cy="519" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="1050" y="524" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Trigger control layout</text>
+        <text x="1050" y="524" text-anchor="end" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Trigger control layout</text>
         <circle cx="1068" cy="550" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="1050" y="555" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Unique size and shape</text>
+        <text x="1050" y="555" text-anchor="end" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Unique size and shape</text>
         <circle cx="1068" cy="581" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="1050" y="586" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Material</text>
+        <text x="1050" y="586" text-anchor="end" font-family="Spectral, Georgia, serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Material</text>
         <rect x="430" y="266" width="260" height="68" rx="34" fill="var(--p-main)"/>
-        <text x="560" y="307" text-anchor="middle" font-family="Poppins, sans-serif" font-size="19" font-weight="800" fill="#fff" letter-spacing="0.5">IMPACT WRENCH</text>
+        <text x="560" y="307" text-anchor="middle" font-family="Spectral, Georgia, serif" font-size="19" font-weight="800" fill="#16221c" letter-spacing="0.5">IMPACT WRENCH</text>
       </svg>
     </div>
 

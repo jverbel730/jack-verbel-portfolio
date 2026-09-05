@@ -11,33 +11,40 @@
 <meta property="og:description" content="Get in touch with Jack Verbel — industrial designer, Middletown, New Jersey.">
 <meta property="og:image" content="/assets/hero_angle.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 400%22%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22190%22 fill=%22%23fff%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22150%22 fill=%22none%22 stroke=%22%23f97316%22 stroke-width=%2244%22 stroke-dasharray=%22785 157%22 transform=%22rotate(-10 200 200)%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%2296%22 fill=%22none%22 stroke=%22%23fb923c%22 stroke-width=%2240%22 stroke-dasharray=%22502 100%22 transform=%22rotate(55 200 200)%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%2226%22 fill=%22%23c2410c%22/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 400%22%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22190%22 fill=%22%231d2b22%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22150%22 fill=%22none%22 stroke=%22%23e0b552%22 stroke-width=%2244%22 stroke-dasharray=%22785 157%22 transform=%22rotate(-10 200 200)%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%2296%22 fill=%22none%22 stroke=%22%23f0d489%22 stroke-width=%2240%22 stroke-dasharray=%22502 100%22 transform=%22rotate(55 200 200)%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%2226%22 fill=%22%23c2953c%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
 <style>
 :root{
-      --bg: oklch(99.5% 0 0);
-      --surface: oklch(96.5% 0 0);
-      --panel: oklch(100% 0 0);
-      --border: oklch(89% 0 0);
-      --text: oklch(17% 0 0);
-      --text-muted: oklch(45% 0 0);
-      --p-deep: oklch(47% 0.18 42);
-      --p-main: oklch(61% 0.22 45);
-      --p-mid: oklch(72% 0.17 52);
-      --p-soft: oklch(83% 0.11 60);
-      --p-light: oklch(92% 0.055 65);
+      /* deep-forest RPG palette */
+      --bg: oklch(20% 0.032 152);
+      --surface: oklch(24.5% 0.036 152);
+      --panel: oklch(27.5% 0.034 152);
+      --border: oklch(38% 0.045 145);
+      --text: oklch(95% 0.014 95);
+      --text-muted: oklch(78% 0.022 105);
+      --p-deep: oklch(63% 0.115 82);
+      --p-main: oklch(81% 0.135 88);
+      --p-mid: oklch(87% 0.10 95);
+      --p-soft: oklch(92% 0.06 100);
+      --p-light: oklch(52% 0.07 118);
+      /* lit panels the product renders sit on */
+      --plate: oklch(99.4% 0.003 95);
+      --plate-ink: oklch(28% 0.03 150);
+      --plate-edge: oklch(70% 0.09 88);
+      --mote: oklch(86% 0.11 100);
+      --btn-ink: oklch(20% 0.03 150);
       --grad: linear-gradient(90deg, var(--p-deep), var(--p-main), var(--p-mid), var(--p-soft));
-      --font-display: 'Poppins', sans-serif;
-      --font-body: 'Poppins', sans-serif;
+      --font-display: 'Cinzel', 'Palatino Linotype', Georgia, serif;
+      --font-body: 'Spectral', Georgia, 'Times New Roman', serif;
     }
     *{ box-sizing:border-box; }
     body{ margin:0; background:var(--bg); font-family:var(--font-body); text-wrap:pretty; }
     a{ color:var(--p-main); }
     a:hover{ color:var(--p-deep); }
     .pfield{ position:absolute; inset:0; z-index:-1; overflow:hidden; pointer-events:none; }
-    .pfield i{ position:absolute; display:block; border-radius:50%; background:oklch(66% 0.22 47); will-change:transform; }
+    .pfield i{ position:absolute; display:block; border-radius:50%; background:var(--mote); will-change:transform; }
     @keyframes pdriftA{ 0%,100%{ transform:translate3d(0,0,0); } 50%{ transform:translate3d(48px,-92px,0); } }
     @keyframes pdriftB{ 0%,100%{ transform:translate3d(0,0,0); } 50%{ transform:translate3d(-58px,-74px,0); } }
     @keyframes pdriftC{ 0%,100%{ transform:translate3d(0,0,0); } 50%{ transform:translate3d(34px,70px,0); } }
@@ -63,7 +70,7 @@
     </div>
   </nav>
 
-  <section style="flex:1; display:flex; align-items:center; padding:100px 0; background:rgba(0,0,0,0.028);">
+  <section style="flex:1; display:flex; align-items:center; padding:100px 0; background:rgba(255,255,255,0.032);">
     <div class="wrap" style="width:100%;">
       <span style="font-family:var(--font-body); font-size:13px; font-weight:700; letter-spacing:1.2px; color:var(--p-main); text-transform:uppercase;">Contact</span>
       <h1 style="font-family:var(--font-display); font-weight:800; font-size:60px; line-height:1.1; color:var(--p-main); margin:16px 0 40px 0;" data-pop="mail">Let's Talk<br>Design</h1>
@@ -71,15 +78,15 @@
       <a href="mailto:Jverbel730@gmail.com" style="display:inline-block; font-family:var(--font-display); font-weight:700; font-size:30px; color:var(--text); text-decoration:none; border-bottom:4px solid var(--p-main); padding-bottom:8px; margin-bottom:56px;" data-pop="mail">Jverbel730@gmail.com</a>
 
       <div style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:24px; max-width:940px;">
-        <div style="background:#fff; border:1px solid var(--border); border-radius:16px; padding:20px 24px;">
+        <div style="background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:20px 24px;">
           <div style="font-family:var(--font-body); font-size:12px; font-weight:700; letter-spacing:0.5px; color:var(--p-main); text-transform:uppercase; margin-bottom:8px;" data-pop="phone">Phone</div>
           <div style="font-family:var(--font-body); font-size:18px; color:var(--text); font-weight:600;">(908) 415-1964</div>
         </div>
-        <div style="background:#fff; border:1px solid var(--border); border-radius:16px; padding:20px 24px;">
+        <div style="background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:20px 24px;">
           <div style="font-family:var(--font-body); font-size:12px; font-weight:700; letter-spacing:0.5px; color:var(--p-deep); text-transform:uppercase; margin-bottom:8px;" data-pop="pin">Location</div>
           <div style="font-family:var(--font-body); font-size:18px; color:var(--text); font-weight:600;" data-pop="pin">Middletown, New Jersey</div>
         </div>
-        <div style="background:#fff; border:1px solid var(--border); border-radius:16px; padding:20px 24px;">
+        <div style="background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:20px 24px;">
           <div style="font-family:var(--font-body); font-size:12px; font-weight:700; letter-spacing:0.5px; color:var(--p-mid); text-transform:uppercase; margin-bottom:8px;" data-pop="linkedin">LinkedIn</div>
           <a href="https://www.linkedin.com/in/jack-verbel-5a95a12a8/" target="_blank" rel="noopener" style="font-family:var(--font-body); font-size:18px; color:var(--p-main); font-weight:600; text-decoration:none;">Jack Verbel &rarr;</a>
         </div>
