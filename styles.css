@@ -195,12 +195,7 @@ html.xcur-on, html.xcur-on *{ cursor:none !important; }
 }
 
 /* ---------- forest green on white ---------- */
-body{
-  background:
-    radial-gradient(1100px 620px at 50% -12%, oklch(97% 0.014 150) 0%, transparent 70%),
-    var(--bg);
-  color:var(--text);
-}
+body{ background:var(--bg); color:var(--text); }
 body > div[style*="isolation:isolate"]{ background:transparent !important; }
 
 nav{ border-bottom-color:var(--border) !important; }
