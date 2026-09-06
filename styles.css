@@ -226,8 +226,8 @@ div[style*="aspect-ratio:4/3"]{ background:transparent !important; border-bottom
 
 /* ---------- gyroscopic gear logomark ---------- */
 .gyro{
-  --s:84px;
-  width:120px; height:120px; flex-shrink:0;
+  --s:100px;
+  width:140px; height:140px; flex-shrink:0;
   display:flex; align-items:center; justify-content:center;
   perspective:440px;
 }
@@ -245,7 +245,7 @@ div[style*="aspect-ratio:4/3"]{ background:transparent !important; border-bottom
   .gx{ animation:none; transform:rotateX(18deg); }
   .gear{ animation:none; }
 }
-@media (max-width: 640px){ .gyro{ --s:62px; width:94px; height:94px; } }
+@media (max-width: 640px){ .gyro{ --s:66px; width:100px; height:100px; } }
 
 /* ---------- clean sheet: no rules, no frames ---------- */
 .card, nav, footer, .row,
@@ -295,3 +295,7 @@ nav a{ padding-bottom:0 !important; }
   .hero-grid{ grid-template-columns:1fr !important; gap:36px; }
   #globe{ max-width:340px; }
 }
+
+/* the home hero is just the name and the globe now */
+.hero-copy h1{ font-size:clamp(52px, 10.5vw, 104px) !important; letter-spacing:-0.03em !important; line-height:0.98 !important; }
+@media (max-width: 1000px){ .hero-copy h1{ font-size:clamp(46px, 12vw, 76px) !important; } }
