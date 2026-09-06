@@ -258,3 +258,31 @@ div[style*="aspect-ratio:4/3"]{ background:transparent !important; border-bottom
 @media (max-width: 640px){
   .cube3d{ --s:54px; width:88px; height:88px; }
 }
+
+/* ---------- clean sheet: no rules, no frames ---------- */
+.card, nav, footer, .row,
+[style*="border-bottom:1px"], [style*="border-top:1px"],
+[style*="border:1px"], [style*="border:1.5px"], [style*="border:3px"],
+[style*="border-bottom:3px"], [style*="border-bottom:4px"], [style*="border-left:"]{
+  border:none !important;
+}
+/* divider lines and accent bars drawn as thin divs */
+div[style*="height:1px"], div[style*="height:5px"], div[style*="height:6px"]{
+  display:none !important;
+}
+.card:hover{ box-shadow:none !important; }
+
+/* the current page is marked by colour now that the underline is gone */
+nav a{ padding-bottom:0 !important; }
+
+/* chips and badges: soft filled pills with a tool mark */
+.chip, .badge{
+  display:inline-flex !important; align-items:center; gap:7px;
+  background:oklch(96.2% 0.021 150) !important;
+  border:none !important;
+  color:var(--p-deep) !important;
+}
+.chip svg, .badge svg{ width:14px; height:14px; flex-shrink:0; display:block; opacity:.85; }
+
+/* the password field keeps a shape without a rule */
+#lockpw{ background:oklch(96.2% 0.021 150) !important; border:none !important; }
