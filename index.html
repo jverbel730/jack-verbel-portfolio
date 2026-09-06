@@ -11,30 +11,29 @@
 <meta property="og:description" content="Industrial design portfolio of Jack Verbel — product design, 3D modelling and rendering. Montclair State University.">
 <meta property="og:image" content="/assets/w_hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 400%22%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22190%22 fill=%22%231d2b22%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22150%22 fill=%22none%22 stroke=%22%23e0b552%22 stroke-width=%2244%22 stroke-dasharray=%22785 157%22 transform=%22rotate(-10 200 200)%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%2296%22 fill=%22none%22 stroke=%22%23f0d489%22 stroke-width=%2240%22 stroke-dasharray=%22502 100%22 transform=%22rotate(55 200 200)%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%2226%22 fill=%22%23c2953c%22/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 400%22%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22190%22 fill=%22%23ffffff%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22150%22 fill=%22none%22 stroke=%22%231d4d33%22 stroke-width=%2244%22 stroke-dasharray=%22785 157%22 transform=%22rotate(-10 200 200)%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%2296%22 fill=%22none%22 stroke=%22%232f7a52%22 stroke-width=%2240%22 stroke-dasharray=%22502 100%22 transform=%22rotate(55 200 200)%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%2226%22 fill=%22%23143d28%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
 <style>
 :root{
-      /* deep-forest RPG palette */
-      --bg: oklch(20% 0.032 152);
-      --surface: oklch(24.5% 0.036 152);
-      --panel: oklch(27.5% 0.034 152);
-      --border: oklch(38% 0.045 145);
-      --text: oklch(95% 0.014 95);
-      --text-muted: oklch(78% 0.022 105);
-      --p-deep: oklch(63% 0.115 82);
-      --p-main: oklch(81% 0.135 88);
-      --p-mid: oklch(87% 0.10 95);
-      --p-soft: oklch(92% 0.06 100);
-      --p-light: oklch(52% 0.07 118);
-      /* lit panels the product renders sit on */
-      --plate: oklch(99.4% 0.003 95);
-      --plate-ink: oklch(28% 0.03 150);
-      --plate-edge: oklch(70% 0.09 88);
-      --mote: oklch(86% 0.11 100);
-      --btn-ink: oklch(20% 0.03 150);
+      /* forest green on white */
+      --bg: oklch(99.4% 0.002 150);
+      --surface: oklch(96.6% 0.008 150);
+      --panel: oklch(100% 0 0);
+      --border: oklch(88% 0.014 150);
+      --text: oklch(21% 0.016 150);
+      --text-muted: oklch(46% 0.017 150);
+      --p-deep: oklch(31% 0.075 152);
+      --p-main: oklch(42% 0.098 150);
+      --p-mid: oklch(55% 0.095 148);
+      --p-soft: oklch(72% 0.075 146);
+      --p-light: oklch(89% 0.042 145);
+      --plate: oklch(100% 0 0);
+      --plate-ink: oklch(21% 0.016 150);
+      --plate-edge: oklch(88% 0.014 150);
+      --mote: oklch(58% 0.095 148);
+      --btn-ink: oklch(99% 0 0);
       --grad: linear-gradient(90deg, var(--p-deep), var(--p-main), var(--p-mid), var(--p-soft));
       --font-display: 'Poppins', sans-serif;
       --font-body: 'Poppins', sans-serif;
@@ -51,7 +50,7 @@
     @keyframes ppulse{ 0%,100%{ opacity:var(--o); } 50%{ opacity:calc(var(--o) * 0.3); } }
     @media (prefers-reduced-motion: reduce){ .pfield i{ animation:none !important; } }
     .wrap{ max-width:1280px; margin:0 auto; padding:0 80px; }
-    .chip{ font-family:var(--font-body); font-size:12px; font-weight:700; padding:7px 16px; border-radius:999px; background:rgba(255,255,255,0.05); border:1.5px solid var(--p-light); }
+    .chip{ font-family:var(--font-body); font-size:12px; font-weight:700; padding:7px 16px; border-radius:999px; background:#fff; border:1.5px solid var(--p-light); }
     .logolock{ display:flex; align-items:center; gap:30px; }
     .btn{ display:inline-flex; align-items:center; gap:8px; font-family:var(--font-body); font-weight:700; font-size:13px; color:var(--btn-ink); padding:11px 22px; border-radius:999px; }
 </style>
@@ -73,7 +72,7 @@
     </div>
   </nav>
 
-  <section style="background:rgba(255,255,255,0.032); padding:100px 0 96px 0;">
+  <section style="background:rgba(0,0,0,0.028); padding:100px 0 96px 0;">
     <div class="wrap">
       <div style="position:relative; z-index:3; display:flex; align-items:center; gap:10px; margin-bottom:56px;">
         <div style="width:10px; height:10px; border-radius:50%; background:var(--p-main);"></div>
@@ -102,7 +101,7 @@
       <div class="card" style="position:relative; background:var(--panel); border:1px solid var(--border); border-radius:24px; overflow:hidden; display:flex; flex-direction:column;">
         <div style="height:6px; background:var(--p-main);"></div>
         <a href="/watch" style="display:block;"><div style="aspect-ratio:4/3; background:var(--plate); border-bottom:1px solid var(--border); padding:24px; display:flex; align-items:center; justify-content:center;">
-          <img src="/assets/card_movado.webp" alt="Movado 2025 — watch project" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block;">
+          <img src="/assets/card_movado.jpg" alt="Movado 2025 — watch project" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block;">
         </div></a>
         <div style="padding:32px 36px 36px 36px; display:flex; flex-direction:column; gap:20px; flex:1;">
           <div>
@@ -120,7 +119,7 @@
       <div class="card" style="position:relative; background:var(--panel); border:1px solid var(--border); border-radius:24px; overflow:hidden; display:flex; flex-direction:column;">
         <div style="height:6px; background:var(--p-deep);"></div>
         <a href="/wrench" style="display:block;"><div style="aspect-ratio:4/3; background:var(--plate); border-bottom:1px solid var(--border); padding:24px; display:flex; align-items:center; justify-content:center;">
-          <img src="/assets/w_hero.webp" alt="Ingersoll Rand impact wrench — final render" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block;">
+          <img src="/assets/w_hero.jpg" alt="Ingersoll Rand impact wrench — final render" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block;">
         </div></a>
         <div style="padding:32px 36px 36px 36px; display:flex; flex-direction:column; gap:20px; flex:1;">
           <div>
