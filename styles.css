@@ -274,3 +274,24 @@ nav a{ padding-bottom:0 !important; }
 
 /* the password field keeps a shape without a rule */
 #lockpw{ background:oklch(96.2% 0.021 150) !important; border:none !important; }
+
+/* ---------- interactive globe ---------- */
+.hero-grid{ display:grid; grid-template-columns:minmax(0,1fr) 470px; gap:48px; align-items:center; }
+.globe-wrap{ position:relative; display:flex; align-items:center; justify-content:center; }
+#globe{ width:100%; max-width:470px; aspect-ratio:1/1; touch-action:none; -webkit-user-select:none; user-select:none; }
+.globe-svg{ width:100%; height:100%; display:block; overflow:visible; }
+.g-atmo{ fill:none; stroke:var(--p-soft); stroke-width:1.1; stroke-dasharray:2 9; opacity:.75; }
+.g-disc{ fill:oklch(97.6% 0.013 150); }
+.g-limb{ fill:none; stroke:var(--p-main); stroke-width:2.2; transition:stroke .2s ease; }
+.g-land path{ fill:oklch(90.5% 0.048 148); stroke:var(--p-mid); stroke-width:1.4; stroke-linejoin:round; }
+.g-wire path{ fill:none; stroke:var(--p-mid); opacity:.5; stroke-linecap:round; }
+.g-dot{ fill:var(--p-deep); }
+.g-ico path{ fill:none; stroke:var(--p-deep); stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.g-lead{ stroke:var(--p-deep); stroke-width:1.4; }
+.g-lab{ font-family:var(--font-body); font-size:13px; font-weight:700; fill:var(--p-deep); }
+#globe.is-grabbed .g-limb{ stroke:var(--p-deep); stroke-width:3; }
+.sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+@media (max-width: 1000px){
+  .hero-grid{ grid-template-columns:1fr !important; gap:36px; }
+  #globe{ max-width:340px; }
+}
