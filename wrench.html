@@ -3,367 +3,97 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ingersoll Rand Impact Wrench — Jack Verbel</title>
-<meta name="description" content="A pneumatic impact wrench with the full exterior designed from scratch — shop research, foam models, CAD and final renders.">
+<title>Impact Wrench &mdash; Jack Verbel</title>
+<meta name="description" content="A pneumatic impact wrench with the full exterior designed from scratch: shop research, foam models, CAD and final renders.">
 <meta name="author" content="Jack Verbel">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ingersoll Rand Impact Wrench — Jack Verbel">
-<meta property="og:description" content="A pneumatic impact wrench with the full exterior designed from scratch — shop research, foam models, CAD and final renders.">
+<meta property="og:title" content="Impact Wrench &mdash; Jack Verbel">
+<meta property="og:description" content="A pneumatic impact wrench with the full exterior designed from scratch: shop research, foam models, CAD and final renders.">
 <meta property="og:image" content="/assets/w_hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 400%22%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22190%22 fill=%22%23ffffff%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%22150%22 fill=%22none%22 stroke=%22%231d4d33%22 stroke-width=%2244%22 stroke-dasharray=%22785 157%22 transform=%22rotate(-10 200 200)%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%2296%22 fill=%22none%22 stroke=%22%232f7a52%22 stroke-width=%2240%22 stroke-dasharray=%22502 100%22 transform=%22rotate(55 200 200)%22/%3E%3Ccircle cx=%22200%22 cy=%22200%22 r=%2226%22 fill=%22%23143d28%22/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23121212'/%3E%3Ctext x='16' y='22' font-family='Helvetica,Arial,sans-serif' font-size='15' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3EJV%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
-<style>
-:root{
-      /* forest green on white */
-      --bg: oklch(100% 0 0);
-      --surface: oklch(100% 0 0);
-      --panel: oklch(100% 0 0);
-      --border: oklch(88% 0.014 150);
-      --text: oklch(21% 0.016 150);
-      --text-muted: oklch(46% 0.017 150);
-      --p-deep: oklch(31% 0.075 152);
-      --p-main: oklch(42% 0.098 150);
-      --p-mid: oklch(55% 0.095 148);
-      --p-soft: oklch(72% 0.075 146);
-      --p-light: oklch(89% 0.042 145);
-      --plate: oklch(100% 0 0);
-      --plate-ink: oklch(21% 0.016 150);
-      --plate-edge: oklch(88% 0.014 150);
-      --mote: oklch(58% 0.095 148);
-      --btn-ink: oklch(99% 0 0);
-      --grad: linear-gradient(90deg, var(--p-deep), var(--p-main), var(--p-mid), var(--p-soft));
-      --font-display: 'Poppins', sans-serif;
-      --font-body: 'Poppins', sans-serif;
-    }
-    *{ box-sizing:border-box; }
-    body{ margin:0; background:var(--bg); font-family:var(--font-body); text-wrap:pretty; }
-    a{ color:var(--p-main); }
-    a:hover{ color:var(--p-deep); }
-    .wrap{ max-width:1280px; margin:0 auto; padding:0 80px; }
-    .badge{ font-family:var(--font-body); font-size:12px; font-weight:700; padding:7px 16px; border-radius:999px; background:#fff; border:1.5px solid var(--p-light); }
-    .step{ display:flex; flex-direction:column; gap:10px; }
-    .step-num{ font-family:var(--font-display); font-weight:800; font-size:15px; }
-    .section-title{ font-family:var(--font-display); font-weight:800; font-size:32px; color:var(--p-main); margin:14px 0 12px 0; }
-    .eyebrow{ font-family:var(--font-body); font-size:13px; font-weight:700; letter-spacing:1.2px; color:var(--p-main); text-transform:uppercase; }
-    .card{ background:var(--panel); border:1px solid var(--border); border-radius:20px; }
-    .lede{ font-family:var(--font-body); font-size:16px; line-height:1.7; color:var(--text-muted); margin:0 0 32px 0; max-width:760px; }
-    .feat{ display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; margin-bottom:40px; }
-    .feat h3{ font-family:var(--font-display); font-weight:700; font-size:22px; color:var(--p-main); margin:0 0 12px 0; }
-    .feat p{ font-family:var(--font-body); font-size:16px; line-height:1.7; color:var(--text-muted); margin:0; }
-    .cap{ font-family:var(--font-body); font-size:13px; line-height:1.6; color:var(--text-muted); margin:14px 0 0 0; font-weight:600; }
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-<div style="width:100%; background:var(--bg); overflow:hidden; position:relative; isolation:isolate;">
-  
-
-
-  <div style="height:5px; background:var(--grad);"></div>
-
-  <nav style="display:flex; align-items:center; justify-content:space-between; padding:0 80px; height:88px; border-bottom:1px solid var(--border);">
-    <a href="/" style="font-family:var(--font-display); font-weight:800; font-size:20px; color:var(--text); text-decoration:none;">Jack<span style="color:var(--p-main);">.</span>Verbel</a>
-    <div style="display:flex; align-items:center; gap:40px;">
-      <a href="/" style="font-family:var(--font-body); font-weight:700; font-size:14px; text-decoration:none; color:var(--text); border-bottom:3px solid var(--p-main); padding-bottom:28px;">Work</a>
-      <a href="/about" style="font-family:var(--font-body); font-weight:700; font-size:14px; text-decoration:none; color:var(--text-muted); border-bottom:3px solid transparent; padding-bottom:28px;">About</a>
-      <a href="/contact" style="font-family:var(--font-body); font-weight:700; font-size:14px; text-decoration:none; color:var(--text-muted); border-bottom:3px solid transparent; padding-bottom:28px;">Contact</a>
-    </div>
-  </nav>
-
-  <div class="wrap" style="padding-top:32px;">
-    <span style="font-family:var(--font-body); font-size:13px; color:var(--text-muted); font-weight:600;">&larr; <a href="/" style="color:var(--text-muted); text-decoration:none;">Work</a> / Impact Wrench</span>
+<header class="nav">
+  <a class="nav-name" href="/">Jack Verbel</a>
+  <nav class="nav-links" aria-label="Primary"><a href="/">Work</a><a href="/about">About</a><a href="/contact">Contact</a></nav>
+</header>
+<main>
+<section class="case-head">
+  <div class="wrap">
+    <p class="eyebrow">Ingersoll Rand &mdash; Jan to May 2026</p>
+    <h1 class="h1" style="margin-top:18px;">Impact Wrench</h1>
+    <p class="lede measure" style="margin-top:22px;font-size:clamp(18px,2vw,25px);color:var(--ink);">A half-inch pneumatic impact wrench, rebuilt from the internals outward.</p>
+    <dl class="spec" data-rv><div><dt>Role</dt><dd>Industrial design, ergonomics, rendering</dd></div><div><dt>Timeline</dt><dd>Jan &ndash; May 2026</dd></div><div><dt>Tools</dt><dd>SolidWorks, KeyShot, foam modelling</dd></div><div><dt>Scope</dt><dd>Full exterior: housing, grip, trigger, regulator, nose</dd></div></dl>
   </div>
-
-  <section class="wrap" style="padding:40px 0 88px 0; display:grid; grid-template-columns:1fr 460px; gap:64px; align-items:center;">
-    <div>
-      <span class="eyebrow">Student Collaboration &mdash; Ingersoll Rand</span>
-      <h1 style="font-family:var(--font-display); font-weight:800; font-size:52px; line-height:1.1; color:var(--p-main); margin:18px 0 24px 0;" data-pop="wrench">Pneumatic<br>Impact Wrench</h1>
-      <p style="font-family:var(--font-body); font-size:18px; line-height:1.7; color:var(--text-muted); margin:0 0 32px 0;">
-        A half-inch impact wrench with every exterior surface &mdash; housing, grip, and drive nose &mdash; built from scratch around the tool's existing internal mechanism.
-      </p>
-      <div style="display:flex; gap:10px; flex-wrap:wrap;">
-        <span class="badge" style="border-color:var(--p-deep); color:var(--p-deep);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.6 6.4a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.7-3.7a6 6 0 0 1-7.9 7.9l-6.8 6.8a2.1 2.1 0 0 1-3-3l6.8-6.8a6 6 0 0 1 7.9-7.9l-3.7 3.7z"/></svg><span>Ingersoll Rand</span></span>
-        <span class="badge" style="border-color:var(--p-main); color:var(--p-main);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="5.2" width="17.6" height="15.4" rx="2.4"/><path d="M3.2 10.2h17.6M8 2.8v4.4M16 2.8v4.4"/></svg><span>Jan &ndash; May 2026</span></span>
-        <span class="badge" style="border-color:var(--p-mid); color:var(--p-deep);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.6 20.5 7v10L12 21.4 3.5 17V7z"/><path d="M3.5 7 12 11.6 20.5 7M12 11.6v9.8"/></svg><span>SolidWorks</span></span>
-        <span class="badge" style="border-color:var(--p-soft); color:var(--p-main);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13.4" r="6.8"/><path d="M9.2 10.9a3.9 3.9 0 0 1 2.5-1.2"/><path d="M12 2.4v2.2M19.4 5.4l-1.6 1.6M4.6 5.4l1.6 1.6"/></svg><span>KeyShot</span></span>
-        <span class="badge" style="border-color:var(--p-deep); color:var(--p-deep);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5c3.5 3.2 5.7 6.4 6.5 9.6L12 21.5 5.5 12.1C6.3 8.9 8.5 5.7 12 2.5z"/><path d="M12 12.6v4.2"/><circle cx="12" cy="10.5" r="1.5"/></svg><span>Adobe Illustrator</span></span>
-      </div>
+</section>
+<section class="beat-tight"><div class="wrap"><div class="cols-2" style="align-items:center;" data-rv><figure><img src="/assets/w_hero.jpg" alt="Finished Ingersoll Rand impact wrench, black and red" loading="lazy"></figure><figure><img src="/assets/w_side.jpg" alt="Side elevation of the finished impact wrench" loading="lazy"></figure></div></div></section>
+<section class="beat band">
+  <div class="wrap">
+    <div class="beat-head" data-rv>
+      <div><span class="beat-no">00</span><p class="eyebrow">The Brief</p></div>
+      <div class="stack"><h2 class="h2">Tough and purposeful in the hand, without going front-heavy.</h2><p class="lede measure">Time in a working shop set the priorities: high torque on stubborn bolts, a compact head for tight spaces, low weight and vibration for long sessions, and a work light that actually reaches the fastener. Every exterior surface was designed around off-the-shelf internal components.</p><div class="facts"><p class="eyebrow" style="margin-bottom:14px;">Platform</p><dl><div class="row"><dt>Drive</dt><dd>1/2 inch</dd></div><div class="row"><dt>Max pressure</dt><dd>90 psig / 6.2 bar</dd></div><div class="row"><dt>Free speed</dt><dd>8,500 rpm</dd></div></dl></div></div>
     </div>
-    <div class="card" style="padding:20px;">
-      <img src="/assets/w_hero.jpg" alt="Final impact wrench render, black and red with chrome hammer case" style="width:100%; display:block; border-radius:12px;">
+  </div>
+</section>
+<section class="beat">
+  <div class="wrap">
+    <div class="beat-head" data-rv>
+      <div><span class="beat-no">01</span><p class="eyebrow">Research &amp; Ideation</p></div>
+      <div class="stack"><h2 class="h2">Shop floor first, foam second, CAD last.</h2><p class="lede measure">The project started at a working shop, talking to technicians about which tools they reach for and what frustrates them. Shaping the grip in foam was the fastest way to judge volume and balance in the hand &mdash; the part hardest to evaluate on screen.</p></div>
     </div>
-  </section>
-
-  <section class="wrap" style="padding-bottom:96px; display:grid; grid-template-columns:1fr 360px; gap:80px; align-items:start;">
-    <div>
-      <h2 style="font-family:var(--font-display); font-weight:800; font-size:26px; color:var(--p-main); margin:0 0 18px 0;" data-pop="bulb">The Brief</h2>
-      <p style="font-family:var(--font-body); font-size:17px; line-height:1.8; color:var(--text-muted); margin:0;">
-        Redesign Ingersoll Rand's half-inch impact wrench from the internals outward. Time in a working shop set the priorities: high torque on stubborn bolts, a compact head for tight spaces, low weight and vibration for long sessions, and a work light that actually reaches the fastener. The result had to read as tough and purposeful in the hand while staying balanced rather than front-heavy.
-      </p>
+<div class="stack" style="margin-top:var(--step);"><div class="cols-3" data-rv><figure><img src="/assets/w_shop1.jpg" alt="Shop floor research photograph" loading="lazy"></figure><figure><img src="/assets/w_shop2.jpg" alt="Shop floor research photograph" loading="lazy"></figure><figure><img src="/assets/w_shop3.jpg" alt="Shop floor research photograph" loading="lazy"></figure></div><div class="beat-head" data-rv><p class="eyebrow">What technicians asked for</p><ul class="ticks cols-2" style="gap:11px clamp(18px,3vw,40px);"><li>High torque for stubborn bolts</li><li>Compact head for tight spaces</li><li>Lightweight, to cut fatigue</li><li>Durable enough for shop conditions</li><li>Comfortable grip, low vibration</li><li>Balanced, not front-heavy</li><li>Built-in light for visibility</li><li>Easy forward / reverse switch</li><li>Quick socket change</li><li>Air-efficient, less compressor draw</li></ul></div><div class="cols-4" data-rv><figure><img src="/assets/w_foam1.jpg" alt="Foam grip study" loading="lazy"></figure><figure><img src="/assets/w_foam2.jpg" alt="Foam grip study" loading="lazy"></figure><figure><img src="/assets/w_foam3.jpg" alt="Foam grip study" loading="lazy"></figure><figure><img src="/assets/w_foam4.jpg" alt="Foam grip study" loading="lazy"><figcaption class="cap">Foam models &mdash; grip studies, judged in the hand</figcaption></figure></div></div>  </div>
+</section>
+<section class="beat">
+  <div class="wrap">
+    <div class="beat-head" data-rv>
+      <div><span class="beat-no">02</span><p class="eyebrow">CAD Development</p></div>
+      <div class="stack"><h2 class="h2">First housing passes, stripped of colour.</h2><p class="lede measure">Straight out of the foam models the housing went into SolidWorks and stayed in a plain white finish. With the colour gone, the split line, grip section and trigger relief had to hold up on form alone. Red went on nothing but the parts a user actually touches.</p></div>
     </div>
-    <div style="display:flex; flex-direction:column; gap:24px;">
-      <div class="card" style="padding:28px;">
-        <div style="font-family:var(--font-display); font-weight:800; font-size:13px; letter-spacing:0.3px; color:var(--p-main); text-transform:uppercase; margin-bottom:10px;">Scope</div>
-        <p style="font-family:var(--font-body); font-size:14px; line-height:1.6; color:var(--text-muted); margin:0;">Full exterior housing, grip, trigger, power regulator, and drive nose &mdash; designed around off-the-shelf internal components.</p>
-      </div>
-      <div class="card" style="padding:28px;">
-        <div style="font-family:var(--font-display); font-weight:800; font-size:13px; letter-spacing:0.3px; color:var(--p-deep); text-transform:uppercase; margin-bottom:10px;">Platform</div>
-        <div style="font-family:var(--font-body); font-size:13px; color:var(--text-muted); line-height:1.9; font-weight:600;">Drive: 1/2 inch<br>Max pressure: 90 psig / 6.2 bar<br>Free speed: 8,500 RPM</div>
-      </div>
+<div class="stack" style="margin-top:var(--step);"><div data-rv><figure><img src="/assets/cad_r_hero.webp" alt="White CAD render, three-quarter front view" loading="lazy"><figcaption class="cap">Three-quarter front &mdash; control face, spec plate, power regulator</figcaption></figure></div><div class="cols-2" data-rv><figure><img src="/assets/cad_r_side.webp" alt="Side elevation of the white CAD housing" loading="lazy"><figcaption class="cap">Side elevation &mdash; the split line running nose to grip</figcaption></figure><figure><img src="/assets/cad_r_rear.webp" alt="Three-quarter rear view showing barrel and anvil" loading="lazy"><figcaption class="cap">Rear three-quarter &mdash; barrel, anvil, 1/2&quot; drive</figcaption></figure></div><div class="cols-2" data-rv><figure><img src="/assets/cad_r_dial.webp" alt="Closeup of the power regulator" loading="lazy"><figcaption class="cap">Power regulator &mdash; oversized paddle, glove-friendly detent</figcaption></figure><figure><img src="/assets/cad_r_led.webp" alt="Closeup of the recessed work light" loading="lazy"><figcaption class="cap">Work light &mdash; recessed into the nose, aimed at the socket</figcaption></figure></div></div>  </div>
+</section>
+<section class="beat">
+  <div class="wrap">
+    <div class="beat-head" data-rv>
+      <div><span class="beat-no">03</span><p class="eyebrow">Detail</p></div>
+      <div class="stack"><h2 class="h2">Four decisions that carried the design.</h2></div>
     </div>
-  </section>
-
-  <section class="wrap" style="padding-bottom:96px;">
-    <span class="eyebrow" style="color:var(--p-mid);">Research &amp; Ideation</span>
-    <h2 class="section-title" data-pop="box">Shop Floor to Foam</h2>
-    <p class="lede">
-      The project started at a working shop, talking to technicians about which tools they reach for and what frustrates them. Those conversations set the priorities, and foam models tested how the tool actually sits in a hand before anything went into CAD.
-    </p>
-
-    <div style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:20px; margin-bottom:56px;">
-      <div class="card" style="padding:14px;"><img src="/assets/w_shop1.jpg" alt="Technicians in the shop discussing their tools" style="width:100%; display:block; border-radius:10px;"></div>
-      <div class="card" style="padding:14px;"><img src="/assets/w_shop2.jpg" alt="Shop bay with a tool cart and vehicle on a lift" style="width:100%; display:block; border-radius:10px;"></div>
-      <div class="card" style="padding:14px;"><img src="/assets/w_shop3.jpg" alt="Technician at work in the service bay" style="width:100%; display:block; border-radius:10px;"></div>
+<div class="cols-2" style="margin-top:var(--step);gap:clamp(24px,3.5vw,56px);" data-rv><div class="feature"><h3 class="h3">Forward-set work light</h3><p>The light moved forward and extrudes outward so the beam clears the socket and tool head instead of being blocked by it. A curved slot spreads it more evenly, cutting the shadow directly in front of the tool.</p></div><div class="feature"><h3 class="h3">Hourglass power regulator</h3><p>The narrow centre fits a natural thumb grip and makes small power adjustments more precise, while the wider ends are easy to find without looking. LED indicators show the setting at a glance.</p></div><div class="feature"><h3 class="h3">Chamfered wrap texture</h3><p>The texture wraps continuously around the handle so grip stays consistent in any hand position and holds traction with oily hands. It doubles as a visual line carrying the form through the body.</p></div><div class="feature"><h3 class="h3">Compound-curve trigger</h3><p>Curved across multiple planes to match a finger, spreading pressure more evenly than a flat trigger and reducing fatigue over a long job, with finer control through the variable-speed range.</p></div></div><div class="cols-4" style="margin-top:var(--step);" data-rv><figure><img src="/assets/w_led.jpg" alt="Work light detail render" loading="lazy"><figcaption class="cap">Work light</figcaption></figure><figure><img src="/assets/w_dial.jpg" alt="Power regulator detail render" loading="lazy"><figcaption class="cap">Power regulator</figcaption></figure><figure><img src="/assets/w_grip.jpg" alt="Grip texture detail render" loading="lazy"><figcaption class="cap">Wrap texture</figcaption></figure><figure><img src="/assets/w_trigger.jpg" alt="Trigger detail render" loading="lazy"><figcaption class="cap">Compound-curve trigger</figcaption></figure></div>  </div>
+</section>
+<section class="beat">
+  <div class="wrap">
+    <div class="beat-head" data-rv>
+      <div><span class="beat-no">04</span><p class="eyebrow">Accessory Concept</p></div>
+      <div class="stack"><h2 class="h2">Getting the hose off the floor.</h2><p class="lede measure">An air hose dragging across a shop floor is a trip hazard and a snag risk. Magnetic ring clips snap onto the hose and stick to toolboxes, lifts and frames, letting the user reposition it hands-free.</p></div>
     </div>
-
-    <h3 style="font-family:var(--font-display); font-weight:700; font-size:22px; color:var(--p-main); margin:0 0 22px 0;">What technicians asked for</h3>
-    <div style="display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px 56px; margin-bottom:56px; max-width:940px;">
-        <div style="display:flex; align-items:flex-start; gap:12px;"><div style="width:9px; height:9px; border-radius:50%; background:var(--p-main); margin-top:7px; flex-shrink:0;"></div><span style="font-family:var(--font-body); font-size:16px; line-height:1.5; color:var(--text);">High torque for stubborn bolts</span></div>
-        <div style="display:flex; align-items:flex-start; gap:12px;"><div style="width:9px; height:9px; border-radius:50%; background:var(--p-deep); margin-top:7px; flex-shrink:0;"></div><span style="font-family:var(--font-body); font-size:16px; line-height:1.5; color:var(--text);">Compact head for tight spaces</span></div>
-        <div style="display:flex; align-items:flex-start; gap:12px;"><div style="width:9px; height:9px; border-radius:50%; background:var(--p-mid); margin-top:7px; flex-shrink:0;"></div><span style="font-family:var(--font-body); font-size:16px; line-height:1.5; color:var(--text);">Lightweight to reduce fatigue</span></div>
-        <div style="display:flex; align-items:flex-start; gap:12px;"><div style="width:9px; height:9px; border-radius:50%; background:var(--p-main); margin-top:7px; flex-shrink:0;"></div><span style="font-family:var(--font-body); font-size:16px; line-height:1.5; color:var(--text);">Durable for shop conditions</span></div>
-        <div style="display:flex; align-items:flex-start; gap:12px;"><div style="width:9px; height:9px; border-radius:50%; background:var(--p-deep); margin-top:7px; flex-shrink:0;"></div><span style="font-family:var(--font-body); font-size:16px; line-height:1.5; color:var(--text);">Comfortable grip, low vibration</span></div>
-        <div style="display:flex; align-items:flex-start; gap:12px;"><div style="width:9px; height:9px; border-radius:50%; background:var(--p-mid); margin-top:7px; flex-shrink:0;"></div><span style="font-family:var(--font-body); font-size:16px; line-height:1.5; color:var(--text);">Good balance, not front-heavy</span></div>
-        <div style="display:flex; align-items:flex-start; gap:12px;"><div style="width:9px; height:9px; border-radius:50%; background:var(--p-main); margin-top:7px; flex-shrink:0;"></div><span style="font-family:var(--font-body); font-size:16px; line-height:1.5; color:var(--text);">Built-in LED for visibility</span></div>
-        <div style="display:flex; align-items:flex-start; gap:12px;"><div style="width:9px; height:9px; border-radius:50%; background:var(--p-deep); margin-top:7px; flex-shrink:0;"></div><span style="font-family:var(--font-body); font-size:16px; line-height:1.5; color:var(--text);">Easy forward / reverse switch</span></div>
-        <div style="display:flex; align-items:flex-start; gap:12px;"><div style="width:9px; height:9px; border-radius:50%; background:var(--p-mid); margin-top:7px; flex-shrink:0;"></div><span style="font-family:var(--font-body); font-size:16px; line-height:1.5; color:var(--text);">Quick socket change (retainer ring)</span></div>
-        <div style="display:flex; align-items:flex-start; gap:12px;"><div style="width:9px; height:9px; border-radius:50%; background:var(--p-main); margin-top:7px; flex-shrink:0;"></div><span style="font-family:var(--font-body); font-size:16px; line-height:1.5; color:var(--text);">Air-efficient, less compressor draw</span></div>
-        <div style="display:flex; align-items:flex-start; gap:12px;"><div style="width:9px; height:9px; border-radius:50%; background:var(--p-deep); margin-top:7px; flex-shrink:0;"></div><span style="font-family:var(--font-body); font-size:16px; line-height:1.5; color:var(--text);">Consistent power, no battery drop-off</span></div>
+<div style="margin-top:var(--step);" data-rv><figure><img src="/assets/w_hose.jpg" alt="Magnetic hose ring clips concept" loading="lazy"></figure></div>  </div>
+</section>
+<section class="beat">
+  <div class="wrap">
+    <div class="beat-head" data-rv>
+      <div><span class="beat-no">05</span><p class="eyebrow">Final Design</p></div>
+      <div class="stack"><h2 class="h2">The tool.</h2></div>
     </div>
-
-    <h3 style="font-family:var(--font-display); font-weight:700; font-size:22px; color:var(--p-main); margin:0 0 22px 0;">Mind map</h3>
-    <div class="card" style="padding:36px 28px; margin-bottom:56px;">
-      <svg viewBox="0 0 1120 620" width="100%" xmlns="http://www.w3.org/2000/svg" style="display:block; max-width:100%;">
-        <path d="M 430,286 C 320,286 296,62 186,62" stroke="var(--p-deep)" stroke-width="2.5" fill="none" opacity="0.45"/>
-        <rect x="40" y="42" width="146" height="40" rx="20" fill="var(--p-deep)"/>
-        <text x="113" y="68" text-anchor="middle" font-family="Poppins, sans-serif" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="0.6">ERGONOMICS</text>
-        <circle cx="52" cy="111" r="4.5" fill="var(--p-deep)" opacity="0.75"/>
-        <text x="70" y="116" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Grip</text>
-        <circle cx="52" cy="142" r="4.5" fill="var(--p-deep)" opacity="0.75"/>
-        <text x="70" y="147" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Texture</text>
-        <circle cx="52" cy="173" r="4.5" fill="var(--p-deep)" opacity="0.75"/>
-        <text x="70" y="178" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Curvature</text>
-        <circle cx="52" cy="204" r="4.5" fill="var(--p-deep)" opacity="0.75"/>
-        <text x="70" y="209" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Weight distribution</text>
-        <circle cx="52" cy="235" r="4.5" fill="var(--p-deep)" opacity="0.75"/>
-        <text x="70" y="240" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Compactness</text>
-        <path d="M 690,286 C 800,286 814,62 924,62" stroke="var(--p-main)" stroke-width="2.5" fill="none" opacity="0.45"/>
-        <rect x="924" y="42" width="156" height="40" rx="20" fill="var(--p-main)"/>
-        <text x="1002" y="68" text-anchor="middle" font-family="Poppins, sans-serif" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="0.6">PERFORMANCE</text>
-        <circle cx="1068" cy="111" r="4.5" fill="var(--p-main)" opacity="0.75"/>
-        <text x="1050" y="116" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Fastening strength</text>
-        <circle cx="1068" cy="142" r="4.5" fill="var(--p-main)" opacity="0.75"/>
-        <text x="1050" y="147" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Power and speed</text>
-        <circle cx="1068" cy="173" r="4.5" fill="var(--p-main)" opacity="0.75"/>
-        <text x="1050" y="178" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Efficiency</text>
-        <circle cx="1068" cy="204" r="4.5" fill="var(--p-main)" opacity="0.75"/>
-        <text x="1050" y="209" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Consistency</text>
-        <circle cx="1068" cy="235" r="4.5" fill="var(--p-main)" opacity="0.75"/>
-        <text x="1050" y="240" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Durability</text>
-        <path d="M 430,314 C 320,314 255,408 145,408" stroke="var(--p-mid)" stroke-width="2.5" fill="none" opacity="0.45"/>
-        <rect x="40" y="388" width="105" height="40" rx="20" fill="var(--p-mid)"/>
-        <text x="93" y="414" text-anchor="middle" font-family="Poppins, sans-serif" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="0.6">SAFETY</text>
-        <circle cx="52" cy="457" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="70" y="462" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Trigger design</text>
-        <circle cx="52" cy="488" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="70" y="493" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Good lighting</text>
-        <circle cx="52" cy="519" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="70" y="524" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Noise reduction</text>
-        <circle cx="52" cy="550" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="70" y="555" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Vibration reduction</text>
-        <circle cx="52" cy="581" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="70" y="586" text-anchor="start" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">No confusion</text>
-        <path d="M 690,314 C 800,314 773,408 883,408" stroke="var(--p-mid)" stroke-width="2.5" fill="none" opacity="0.45"/>
-        <rect x="883" y="388" width="197" height="40" rx="20" fill="var(--p-mid)"/>
-        <text x="982" y="414" text-anchor="middle" font-family="Poppins, sans-serif" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="0.6">WANTED FEATURES</text>
-        <circle cx="1068" cy="457" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="1050" y="462" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">LED lights</text>
-        <circle cx="1068" cy="488" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="1050" y="493" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Socket connection system</text>
-        <circle cx="1068" cy="519" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="1050" y="524" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Trigger control layout</text>
-        <circle cx="1068" cy="550" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="1050" y="555" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Unique size and shape</text>
-        <circle cx="1068" cy="581" r="4.5" fill="var(--p-mid)" opacity="0.75"/>
-        <text x="1050" y="586" text-anchor="end" font-family="Poppins, sans-serif" font-size="15.5" font-weight="600" fill="var(--text-muted)">Material</text>
-        <rect x="430" y="266" width="260" height="68" rx="34" fill="var(--p-main)"/>
-        <text x="560" y="307" text-anchor="middle" font-family="Poppins, sans-serif" font-size="19" font-weight="800" fill="#ffffff" letter-spacing="0.5">IMPACT WRENCH</text>
-      </svg>
-    </div>
-
-    <h3 style="font-family:var(--font-display); font-weight:700; font-size:22px; color:var(--p-main); margin:0 0 22px 0;">Foam models</h3>
-    <div style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:20px; margin-bottom:20px;">
-      <div class="card" style="padding:14px;"><img src="/assets/w_foam1.jpg" alt="Foam model of the tool body held in hand, front view" style="width:100%; display:block; border-radius:10px;"></div>
-      <div class="card" style="padding:14px;"><img src="/assets/w_foam2.jpg" alt="Foam model held in hand, three-quarter view" style="width:100%; display:block; border-radius:10px;"></div>
-      <div class="card" style="padding:14px;"><img src="/assets/w_foam3.jpg" alt="Foam model held in hand, side view" style="width:100%; display:block; border-radius:10px;"></div>
-    </div>
-    <div style="display:grid; grid-template-columns:1.25fr 1fr; gap:32px; align-items:center;">
-      <div class="card" style="padding:18px;">
-        <img src="/assets/w_foam4.jpg" alt="Three foam grip studies lined up on a table" style="width:100%; display:block; border-radius:10px;">
-      </div>
-      <div>
-        <h4 style="font-family:var(--font-display); font-weight:700; font-size:18px; color:var(--p-main); margin:0 0 12px 0;">Three grip studies</h4>
-        <p style="font-family:var(--font-body); font-size:16px; line-height:1.7; color:var(--text-muted); margin:0;">Shaping the grip in foam was the fastest way to judge volume and balance in the hand &mdash; the part of the tool hardest to evaluate on screen &mdash; before any of it went into CAD.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="wrap" style="padding-bottom:88px;">
-    <span class="eyebrow" style="color:var(--p-mid);">Early CAD Iterations</span>
-    <h2 class="section-title" data-pop="cube">First Housing Passes in SolidWorks</h2>
-    <p class="lede">
-      Straight out of the foam models, the housing went into SolidWorks and stayed in a plain white finish for the
-      first passes. Stripping the color out meant the split line, the grip section, and the trigger relief had to
-      hold up on form alone &mdash; the only thing left to read was the surface. Red went on nothing but the parts a
-      user actually touches. Everything after this point is a decision made off these.
-    </p>
-
-    <figure style="margin:0 0 34px 0;">
-      <img src="/assets/cad_r_hero.webp" alt="CAD render of the impact wrench in white, three-quarter front view" style="width:100%; display:block;">
-      <figcaption class="cap">Three-quarter front &mdash; the control face, spec plate, and red power regulator.</figcaption>
-    </figure>
-
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:end; margin-bottom:34px;">
-      <figure style="margin:0;">
-        <img src="/assets/cad_r_side.webp" alt="Side elevation of the white CAD housing" style="width:100%; display:block;">
-        <figcaption class="cap">Side elevation &mdash; the split line running nose to grip.</figcaption>
-      </figure>
-      <figure style="margin:0;">
-        <img src="/assets/cad_r_rear.webp" alt="Three-quarter rear view showing the chrome barrel and anvil" style="width:100%; display:block;">
-        <figcaption class="cap">Rear three-quarter &mdash; barrel, anvil, and 1/2&quot; drive.</figcaption>
-      </figure>
-    </div>
-
-    <h3 style="font-family:var(--font-display); font-weight:700; font-size:22px; color:var(--p-main); margin:0 0 6px 0;" data-pop="gear">Detail Passes</h3>
-    <p class="lede" style="margin-bottom:24px;">
-      Two areas got their own studies: the power regulator, which has to be found and turned in a glove, and the
-      work light, recessed into the nose so it throws down the socket rather than into the user's eyes.
-    </p>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:start;">
-      <figure style="margin:0;">
-        <div class="detail-crop"><img src="/assets/cad_r_dial.webp" alt="Closeup of the red power regulator dial on the control face"></div>
-        <figcaption class="cap">Power regulator &mdash; oversized paddle, glove-friendly detent.</figcaption>
-      </figure>
-      <figure style="margin:0;">
-        <div class="detail-crop"><img src="/assets/cad_r_led.webp" alt="Closeup of the recessed LED work light in the nose of the tool"></div>
-        <figcaption class="cap">Work light &mdash; recessed into the nose, aimed at the socket.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="wrap" style="padding-bottom:96px;">
-    <span class="eyebrow" style="color:var(--p-deep);">Detail</span>
-    <h2 class="section-title" data-pop="gear">Design Decisions</h2>
-
-    <div class="feat">
-      <div class="card" style="padding:20px;">
-        <img src="/assets/w_led.jpg" alt="Close-up of the forward-set curved light slot beside the hammer case" style="width:100%; display:block; border-radius:10px;">
-      </div>
-      <div>
-        <h3>Forward-set work light</h3>
-        <p>The light moved forward and extrudes outward so the beam clears the socket and tool head instead of being blocked by it. A curved slot spreads it more evenly, cutting the shadow directly in front of the tool and reaching into recessed areas.</p>
-      </div>
-    </div>
-
-    <div class="feat">
-      <div>
-        <h3>Hourglass power regulator</h3>
-        <p>The narrow center fits a natural thumb grip and makes small power adjustments more precise, while the wider ends are easy to find without looking. LED indicators around the dial show the current setting at a glance.</p>
-      </div>
-      <div class="card" style="padding:20px;">
-        <img src="/assets/w_dial.jpg" alt="Close-up of the red hourglass-shaped power regulator dial" style="width:100%; display:block; border-radius:10px;">
-      </div>
-    </div>
-
-    <div class="feat">
-      <div class="card" style="padding:20px;">
-        <img src="/assets/w_grip.jpg" alt="Three-quarter view showing the chamfered texture wrapping the grip" style="width:100%; display:block; border-radius:10px;">
-      </div>
-      <div>
-        <h3>Chamfered wrap texture</h3>
-        <p>The texture wraps continuously around the handle so grip stays consistent in any hand position and holds traction with oily hands. It doubles as a visual line that carries the form through the body of the tool.</p>
-      </div>
-    </div>
-
-    <div class="feat" style="margin-bottom:0;">
-      <div>
-        <h3>Compound-curve trigger</h3>
-        <p>Curved across multiple planes to match the shape of a finger, spreading pressure more evenly than a flat trigger and reducing fatigue over a long job &mdash; with finer control through the variable-speed range.</p>
-      </div>
-      <div class="card" style="padding:20px;">
-        <img src="/assets/w_trigger.jpg" alt="Macro render of the red compound-curved trigger" style="width:100%; display:block; border-radius:10px;">
-      </div>
-    </div>
-  </section>
-
-  <section class="wrap" style="padding-bottom:96px;">
-    <span class="eyebrow" style="color:var(--p-mid);">Accessory Concept</span>
-    <h2 class="section-title" data-pop="air">Hose Management</h2>
-    <p class="lede">
-      An air hose dragging across a shop floor is a trip hazard and a snag risk. A set of magnetic ring clips snaps onto the hose and sticks to toolboxes, lifts, and frames &mdash; keeping it off the ground and letting the user reposition it hands-free as they move.
-    </p>
-    <div class="card" style="padding:20px;">
-      <img src="/assets/w_hose.jpg" alt="Magnetic hose ring clips concept" style="width:100%; display:block; border-radius:10px;">
-    </div>
-  </section>
-
-  <section class="wrap" style="padding-bottom:96px;">
-    <span class="eyebrow">Final Design</span>
-    <h2 class="section-title" data-pop="wrench">The Tool</h2>
-    <div style="display:grid; grid-template-columns:1.3fr 1fr; gap:24px; align-items:start; margin-bottom:24px;">
-      <div class="card" style="padding:20px;">
-        <img src="/assets/w_side.jpg" alt="Side elevation of the finished impact wrench" style="width:100%; display:block; border-radius:10px;">
-      </div>
-      <div class="card" style="padding:20px;">
-        <img src="/assets/w_rear.jpg" alt="Three-quarter rear view of the finished tool" style="width:100%; display:block; border-radius:10px;">
-      </div>
-    </div>
-    <div style="display:grid; grid-template-columns:1fr 1.4fr; gap:24px; align-items:start;">
-      <div class="card" style="padding:20px; display:flex; align-items:center; justify-content:center;">
-        <img src="/assets/w_front.jpg" alt="Front elevation showing the control face" style="width:100%; display:block; border-radius:10px;">
-      </div>
-      <div class="card" style="padding:20px; display:flex; align-items:center; justify-content:center;">
-        <img src="/assets/w_section.jpg" alt="Cross-section through the tool showing the internal air motor and hammer mechanism" style="width:100%; display:block; border-radius:10px;">
-      </div>
-    </div>
-    <p class="cap">A cross-section through the finished housing, checking clearance around the air motor and hammer mechanism.</p>
-  </section>
-
-  <section class="wrap" style="padding-bottom:96px;">
-    <h2 style="font-family:var(--font-display); font-weight:800; font-size:26px; color:var(--p-main); margin:0 0 28px 0;" data-pop="gear">Process</h2>
-    <div class="steps-row" style="display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:20px; position:relative;">
-      <div style="position:absolute; top:8px; left:0; right:0; height:1px; background:var(--border);"></div>
-      <div class="step"><div style="width:16px; height:16px; border-radius:50%; background:var(--p-light); z-index:1;"></div><span class="step-num" style="color:var(--p-soft);">01</span><span style="font-family:var(--font-body); font-size:14px; color:var(--text); font-weight:600;">Shop Research</span></div>
-      <div class="step"><div style="width:16px; height:16px; border-radius:50%; background:var(--p-soft); z-index:1;"></div><span class="step-num" style="color:var(--p-mid);">02</span><span style="font-family:var(--font-body); font-size:14px; color:var(--text); font-weight:600;">Sketch Ideation</span></div>
-      <div class="step"><div style="width:16px; height:16px; border-radius:50%; background:var(--p-mid); z-index:1;"></div><span class="step-num" style="color:var(--p-mid);">03</span><span style="font-family:var(--font-body); font-size:14px; color:var(--text); font-weight:600;">Foam Models</span></div>
-      <div class="step"><div style="width:16px; height:16px; border-radius:50%; background:var(--p-main); z-index:1;"></div><span class="step-num" style="color:var(--p-main);">04</span><span style="font-family:var(--font-body); font-size:14px; color:var(--text); font-weight:600;">CAD in SolidWorks</span></div>
-      <div class="step"><div style="width:16px; height:16px; border-radius:50%; background:var(--p-deep); z-index:1;"></div><span class="step-num" style="color:var(--p-deep);">05</span><span style="font-family:var(--font-body); font-size:14px; color:var(--text); font-weight:600;">KeyShot Rendering</span></div>
-    </div>
-  </section>
-
-  <footer style="border-top:1px solid var(--border); padding:32px 80px; display:flex; align-items:center; justify-content:space-between; font-family:var(--font-body); font-size:13px; color:var(--text-muted);">
-    <div>&copy; 2026 Jack Verbel</div>
-    <div style="display:flex; gap:24px; align-items:center;">
-      <a href="mailto:Jverbel730@gmail.com" style="color:var(--p-main); text-decoration:none; font-weight:600;" data-pop="mail">Jverbel730@gmail.com</a>
-      <a href="https://www.linkedin.com/in/jack-verbel-5a95a12a8/" target="_blank" rel="noopener" style="color:var(--p-main); text-decoration:none; font-weight:600;" data-pop="linkedin">LinkedIn</a>
-      <span data-pop="pin">Middletown, New Jersey</span>
-    </div>
-  </footer>
-
-</div>
-<script src="/pops.js" defer></script>
+<div class="stack" style="margin-top:var(--step);"><div class="cols-2" data-rv><figure><img src="/assets/w_rear.jpg" alt="Three-quarter rear view of the finished tool" loading="lazy"><figcaption class="cap">Rear three-quarter</figcaption></figure><figure><img src="/assets/w_front.jpg" alt="Front elevation showing the control face" loading="lazy"><figcaption class="cap">Front elevation &mdash; control face</figcaption></figure></div><div data-rv><figure><img src="/assets/w_section.jpg" alt="Cross-section through the tool showing the air motor and hammer mechanism" loading="lazy"><figcaption class="cap">Cross-section &mdash; checking clearance around the air motor and hammer mechanism</figcaption></figure></div></div>  </div>
+</section>
+<section class="beat-tight band"><div class="wrap"><p class="eyebrow" style="margin-bottom:18px;">Process</p><div class="steps" data-rv><div><span class="num">01</span>Shop research</div><div><span class="num">02</span>Sketch ideation</div><div><span class="num">03</span>Foam models</div><div><span class="num">04</span>CAD in SolidWorks</div><div><span class="num">05</span>KeyShot rendering</div></div></div></section>
+<section class="beat-tight"><div class="wrap">
+  <a class="pager" href="/watch" data-rv>
+    <span><span class="eyebrow">Next project</span><span class="h2" style="display:block;margin-top:10px;">Movado 2025</span></span>
+    <span class="num">&rarr;</span>
+  </a>
+</div></section>
+</main>
+<footer class="foot">
+  <span>&copy; 2026 Jack Verbel</span>
+  <span><a href="mailto:Jverbel730@gmail.com">Jverbel730@gmail.com</a></span>
+  <span><a href="https://www.linkedin.com/in/jack-verbel-5a95a12a8/" target="_blank" rel="noopener">LinkedIn</a></span>
+  <span>Middletown, New Jersey</span>
+</footer>
+<script src="/site.js" defer></script>
 </body>
 </html>
