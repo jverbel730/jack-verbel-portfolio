@@ -433,7 +433,10 @@ figure{ margin:0; }
    the section releases at its natural end. The canvas never intercepts wheel
    events, so scrolling through behaves exactly like scrolling past anything
    else on the page. */
-.xv-track{ position:relative; height:400vh; }
+/* Longer than it looks: each camera stop dwells for most of its slot
+   before moving, so the section needs real scroll length or every
+   wheel notch jumps a beat. */
+.xv-track{ position:relative; height:760vh; }
 .xv-stage{
   position:sticky; top:0; height:100vh;
   display:grid; place-items:center;
@@ -492,7 +495,7 @@ figure{ margin:0; }
 .xv.xv-fallback{ display:none; }
 
 @media (max-width: 900px){
-  .xv-track{ height:340vh; }
+  .xv-track{ height:620vh; }
   .xv{ width:min(92vw,520px); }
 }
 @media (prefers-reduced-motion: reduce){
