@@ -580,7 +580,11 @@
 
   /* ------------------------------------------------------------ timeline */
   var progress = 0, target = 0, explode = 0, focus = -1, hold = 0;
-  var camYaw = 0, camPitch = 0, camZoom = 1, STOPS = [];
+  // tourPos[partIndex] = where that part falls in the tour, 1-based. The
+  // caption counts stops, not mesh indices: parts[] is in whatever order the
+  // file lists its nodes, so the crown was announcing itself as "part 1 of 17"
+  // while sitting ninth in the sequence the viewer actually walks.
+  var camYaw = 0, camPitch = 0, camZoom = 1, STOPS = [], tourPos = {}, tourLen = 0;
 
   /* yaw, pitch, framing margin. The margins vary on purpose: some beats sit
      right on top of a part, others hang back and let it sit in the frame. */
@@ -611,8 +615,10 @@
       { explode: 0, focus: -1, yaw: -0.25, pitch: 0.78, zoom: 1.08 },
       { explode: 1, focus: -1, yaw: -1.20, pitch: 0.34, zoom: 1.05 }
     ];
+    tourPos = {}; tourLen = order.length;
     order.forEach(function (pi, k) {
       var a = ANGLES[k % ANGLES.length];
+      tourPos[pi] = k + 1;
       STOPS.push({ explode: 1, focus: pi, yaw: a[0], pitch: a[1], zoom: a[2] });
     });
     STOPS.push({ explode: 1, focus: -1, yaw: 1.05, pitch: 0.30, zoom: 1.02 });
@@ -859,7 +865,10 @@
       label.classList.toggle('is-on', on);
       if (on && nameEl) {
         nameEl.textContent = parts[focus].name;
-        if (noteEl) noteEl.textContent = 'Part ' + (focus + 1) + ' of ' + parts.length;
+        if (noteEl) {
+          noteEl.textContent = 'Part ' + (tourPos[focus] || (focus + 1))
+            + ' of ' + (tourLen || parts.length);
+        }
       }
     }
     if (bar) bar.style.transform = 'scaleX(' + progress.toFixed(4) + ')';
