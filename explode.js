@@ -1,7 +1,8 @@
 /* Jack Verbel — interactive exploded view.
 
    A purpose-built WebGL2 renderer for the watch assembly. Scroll drives a
-   camera path that pulls it apart and pushes in on each part; drag orbits it.
+   camera path that pulls it apart and pushes in on each part. Scroll-driven
+   only -- see "no drag" below.
 
    Why not three.js: this build environment has no network access to any CDN or
    package registry, so three.js could not be fetched, vendored or tested, and
@@ -10,18 +11,21 @@
 
    The pipeline, and why each stage is there:
 
-     BACKGROUND  a studio gradient with a glow behind the subject. Product
-                 renders live or die on what is behind them; on flat white the
-                 model read as a CAD screenshot no matter how well it was lit.
      SHADOW      2048² depth map from the key light, 3×3 PCF. Cached, because
                  it depends on the explode amount and never on the camera.
-     SCENE       drawn into a multisampled float target so highlights can go
-                 above 1.0 and survive to the bloom stage.
+     SCENE       drawn into a multisampled float target, cleared TRANSPARENT,
+                 so highlights can go above 1.0 and survive to the bloom stage
+                 and so coverage survives to the composite.
      BLOOM       bright-pass then separable blur at quarter res. This is what
                  makes a specular read as a light source rather than a white
                  pixel.
-     COMPOSITE   ACES tonemap, vignette, and a little grain to kill banding in
-                 the background gradient.
+     COMPOSITE   ACES tonemap, then the model is laid over a flat white
+                 backdrop. White has to go on at this end: run through the ACES
+                 curve it would need a linear value near 8.0 to come out white,
+                 and that detonates the bloom threshold across the screen.
+
+   The environment the metal reflects is a white room to match, since a black
+   watch mirroring a dark studio looked pasted onto the page.
 
    Explode grouping matters as much as any of it: the strap, keeper, buckle and
    spring bars move as ONE body, because giving each its own offset tore the
@@ -107,25 +111,6 @@
     vUV = p; gl_Position = vec4(p*2.0-1.0, 0.0, 1.0);
   }`;
 
-  var BG_FS = `#version 300 es
-  precision highp float; in vec2 vUV; out vec4 frag;
-  uniform vec2 uAspect;
-  void main(){
-    /* A seamless studio backdrop: dark at the edges, a soft pool of light
-       behind where the subject sits. This is the single biggest reason the
-       model stopped reading as a CAD screenshot. */
-    vec2 p = (vUV - 0.5) * uAspect;
-    float r = length(p * vec2(1.0, 1.25));
-    vec3 deep = vec3(0.022, 0.023, 0.028);
-    vec3 mid  = vec3(0.075, 0.078, 0.092);
-    vec3 glow = vec3(0.30, 0.31, 0.35);
-    vec3 c = mix(mid, deep, smoothstep(0.15, 1.05, r));
-    c += glow * (1.0 - smoothstep(0.0, 0.62, r)) * 0.55;
-    // a cool sliver along the bottom, like light spilling onto a sweep
-    c += vec3(0.05,0.06,0.09) * smoothstep(0.55, 1.0, vUV.y) * 0.0;
-    c += vec3(0.04,0.045,0.06) * smoothstep(0.35, 0.0, vUV.y);
-    frag = vec4(c, 1.0);
-  }`;
 
   var VS = `#version 300 es
   in vec3 aPos; in vec3 aNrm; in vec2 aUV;
@@ -149,25 +134,27 @@
   out vec4 frag;
 
   vec3 env(vec3 d, float rough){
-    /* The studio as a function. A polished part is a mirror, and a mirror of
-       flat grey is flat grey -- so this has real features: a hard horizon, an
-       overhead softbox and two rim strips. The horizon edge is what reads as
-       metal. */
+    /* A white room, not a dark studio. The page around this section is white,
+       so a black watch mirroring a dark box read as a cut-out from someone
+       else's photograph. It is still a ROOM though -- floor, horizon, overhead
+       softbox -- because a mirror of flat white is flat white, and it is the
+       horizon edge running across a polished surface that makes metal look
+       like metal. */
     float y = d.y;
-    vec3 ground = mix(vec3(0.010,0.010,0.013), vec3(0.16,0.16,0.18),
+    vec3 ground = mix(vec3(0.34,0.34,0.36), vec3(0.76,0.76,0.79),
                       smoothstep(-1.0, -0.04, y));
-    vec3 sky = mix(vec3(0.30,0.31,0.35), vec3(0.66,0.68,0.74),
+    vec3 sky = mix(vec3(0.86,0.87,0.90), vec3(1.00,1.01,1.04),
                    smoothstep(0.0, 0.85, y));
     float box = smoothstep(0.55, 0.97, y) * (1.0 - 0.42 * abs(d.z));
-    sky += vec3(5.4,5.4,5.6) * box;
-    sky += vec3(2.6,2.64,2.8) *
+    sky += vec3(3.0,3.0,3.1) * box;
+    sky += vec3(1.30,1.32,1.40) *
            smoothstep(0.88, 1.0, dot(normalize(vec3(-0.78,0.34,-0.52)), d));
-    sky += vec3(1.5,1.5,1.6) *
+    sky += vec3(0.75,0.75,0.80) *
            smoothstep(0.91, 1.0, dot(normalize(vec3(0.72,0.18,0.66)), d));
     vec3 col = mix(ground, sky, smoothstep(-0.03, 0.02, y));
-    col += vec3(0.26,0.27,0.30) * smoothstep(0.25, 1.0, d.z*0.5+0.5)
+    col += vec3(0.10,0.10,0.12) * smoothstep(0.25, 1.0, d.z*0.5+0.5)
            * (0.30 + 1.0 * smoothstep(-0.65, 0.75, y));
-    return mix(col, vec3(0.30,0.31,0.34), rough*rough*0.8);
+    return mix(col, vec3(0.78,0.79,0.82), rough*rough*0.8);
   }
 
   float ggx(vec3 N, vec3 V, vec3 L, float r){
@@ -219,8 +206,15 @@
 
     // output stays linear HDR: tonemapping happens in the composite pass so
     // the bloom stage has real above-1.0 values to work with
-    c = mix(vec3(0.055,0.057,0.066), c, uFade);
-    frag = vec4(c, uAlpha);
+    /* Receding parts go PALE as well as faint. Transparency alone is not
+       enough: eight unfocused parts at low alpha still stack into a solid grey
+       mass on a white backdrop, and that mass buried the one part the camera
+       had just pushed in on. So a fading part is also lifted toward white,
+       which keeps the pile-up light no matter how many layers deep it gets.
+       The lift happens before tonemapping but stays under the bloom threshold
+       once multiplied down by alpha, so ghosts do not glow. */
+    vec3 outc = mix(vec3(1.5), c, uFade);
+    frag = vec4(outc, uAlpha * mix(0.08, 1.0, uFade));
   }`;
 
   var DVS = `#version 300 es
@@ -258,17 +252,18 @@
     return clamp((x*(2.51*x+0.03))/(x*(2.43*x+0.59)+0.14), 0.0, 1.0);
   }
   void main(){
-    vec3 c = texture(uScene, vUV).rgb + texture(uBloom, vUV).rgb * 0.55;
-    c = aces(c * 0.58);
-    // vignette
-    vec2 p = (vUV - 0.5) * 2.0;
-    c *= 1.0 - 0.30 * pow(clamp(length(p*vec2(0.92,1.0)) * 0.72, 0.0, 1.0), 2.2);
+    vec4 s = texture(uScene, vUV);
+    float a = clamp(s.a, 0.0, 1.0);
+    // Un-premultiply before tonemapping. The scene buffer holds colour already
+    // multiplied down by coverage, and running a curve over that would darken
+    // every edge pixel and every ghosted part instead of making it transparent.
+    vec3 src = a > 0.0015 ? s.rgb / a : vec3(0.0);
+    vec3 c = aces((src + texture(uBloom, vUV).rgb * 0.55) * 0.58);
     c = pow(c, vec3(1.0/2.2));
-    // a touch of grain: the background is a wide smooth gradient and 8-bit
-    // output bands visibly without it
-    float n = fract(sin(dot(vUV*vec2(1271.3,913.7) + uTime, vec2(12.9898,78.233)))*43758.5453);
-    c += (n - 0.5) * 0.012;
-    frag = vec4(c, 1.0);
+    // The backdrop: flat white, to match the page this section sits in. No
+    // vignette and no grain -- both existed to hold up a dark gradient, and on
+    // white they would only show up as dirt in the corners.
+    frag = vec4(mix(vec3(1.0), c, a), 1.0);
   }`;
 
   function compile(t, src) {
@@ -297,14 +292,13 @@
   }
 
   var prog = link(VS, FS), dprog = link(DVS, DFS);
-  var bgProg = link(FSQ, BG_FS), brProg = link(FSQ, BRIGHT_FS);
+  var brProg = link(FSQ, BRIGHT_FS);
   var blProg = link(FSQ, BLUR_FS), cmProg = link(FSQ, COMP_FS);
 
   var U = uni(prog, ['uProj', 'uView', 'uModel', 'uNrm', 'uEye', 'uColor',
     'uMetal', 'uRough', 'uAlpha', 'uFade', 'uHasTex', 'uTex', 'uShadow',
     'uLightVP', 'uLightDir', 'uShadowOn', 'uTexel']);
   var D = uni(dprog, ['uLightVP', 'uModel']);
-  var BG = uni(bgProg, ['uAspect']);
   var BR = uni(brProg, ['uSrc']);
   var BL = uni(blProg, ['uSrc', 'uDir']);
   var CM = uni(cmProg, ['uScene', 'uBloom', 'uTime']);
@@ -639,28 +633,15 @@
     hold = k < 0.5 ? 1 - k * 2 : (k - 0.5) * 2;
   }
 
-  /* ------------------------------------------------------------ drag */
-  var drag = { on: false, x: 0, y: 0, yaw: 0, pitch: 0, id: null };
-  host.addEventListener('pointerdown', function (e) {
-    if (drag.id !== null) return;
-    drag.on = true; drag.id = e.pointerId; drag.x = e.clientX; drag.y = e.clientY;
-    host.classList.add('is-drag');
-    if (host.setPointerCapture) { try { host.setPointerCapture(e.pointerId); } catch (x) {} }
-  });
-  host.addEventListener('pointermove', function (e) {
-    if (!drag.on || e.pointerId !== drag.id) return;
-    drag.yaw += (e.clientX - drag.x) * 0.008;
-    drag.pitch = Math.max(-1.05, Math.min(1.05, drag.pitch + (e.clientY - drag.y) * 0.006));
-    drag.x = e.clientX; drag.y = e.clientY;
-    kick();
-  });
-  function endDrag(e) {
-    if (e && e.pointerId !== drag.id) return;
-    drag.on = false; drag.id = null; host.classList.remove('is-drag');
-  }
-  ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(function (ev) {
-    host.addEventListener(ev, endDrag);
-  });
+  /* ---------------------------------------------------------- no drag
+     The viewer is driven by scroll position alone. Orbit-on-drag used to live
+     here and was removed deliberately: the stage is a full-screen sticky
+     element, so on a touch screen the finger that would scroll the page past
+     it was instead being captured as an orbit. That left people stranded on
+     this section with no way out, which is a far worse trade than the bit of
+     interactivity it bought. The element is now transparent to input entirely
+     (pointer-events:none in the stylesheet), so a swipe over it scrolls the
+     page like any other part of the document. */
 
   /* ------------------------------------------------------------ render */
   var FOV = 0.62;
@@ -693,23 +674,36 @@
   function fsq() { gl.bindVertexArray(emptyVAO); gl.drawArrays(gl.TRIANGLES, 0, 3); }
 
   function drawParts(progLocs, depthOnly) {
+    // The focused part is drawn LAST, not first. Ghosts do not write depth, so
+    // any ghost nearer the camera than the part being presented used to blend
+    // straight over it -- invisible when both were dark, but on white it laid a
+    // pale film across the hero. Drawing it last, onto a cleared depth buffer,
+    // means the part the camera just pushed in on is never veiled by context it
+    // happens to sit behind.
     var order = parts.map(function (p, i) { return i; }).sort(function (a, b) {
-      if (!depthOnly && focus >= 0) { if (a === focus) return -1; if (b === focus) return 1; }
+      if (!depthOnly && focus >= 0) { if (a === focus) return 1; if (b === focus) return -1; }
       var aa = Math.min.apply(null, parts[a].prims.map(function (q) { return q.alpha; }));
       var bb = Math.min.apply(null, parts[b].prims.map(function (q) { return q.alpha; }));
       return (aa < 1) - (bb < 1);
     });
-    var ghost = focus >= 0 ? lerp(1, 0.10, smooth(clamp01(hold * 1.5))) : 1;
+    // One ghosting control, not two. It used to be split between an alpha
+    // multiplier and a colour wash toward the dark backdrop; with a white
+    // backdrop composited at the end, fading IS going transparent, so the
+    // whole effect lives on uFade and uAlpha means material opacity again.
+    var ghostFade = focus >= 0 ? lerp(1, 0.12, smooth(clamp01(hold * 1.5))) : 1;
     order.forEach(function (i) {
       var isGhost = !depthOnly && focus >= 0 && i !== focus;
       var m = modelOf(i);
       if (depthOnly) {
         gl.uniformMatrix4fv(D.uModel, false, m);
       } else {
+        // wipe the ghosts' depth right before the hero goes down, so it sorts
+        // only against itself
+        if (focus >= 0 && i === focus) gl.clear(gl.DEPTH_BUFFER_BIT);
         gl.depthMask(!isGhost);
         gl.uniformMatrix4fv(U.uModel, false, m);
         gl.uniformMatrix3fv(U.uNrm, false, normalMat(m));
-        gl.uniform1f(U.uFade, isGhost ? lerp(1, 0.30, smooth(clamp01(hold * 1.5))) : 1);
+        gl.uniform1f(U.uFade, isGhost ? ghostFade : 1);
       }
       parts[i].prims.forEach(function (q) {
         if (depthOnly && q.alpha < 0.95) return;
@@ -717,7 +711,7 @@
           gl.uniform3fv(U.uColor, q.color);
           gl.uniform1f(U.uMetal, q.metal);
           gl.uniform1f(U.uRough, q.rough);
-          gl.uniform1f(U.uAlpha, isGhost ? q.alpha * ghost : q.alpha);
+          gl.uniform1f(U.uAlpha, q.alpha);
           var t = q.tex >= 0 ? texes[q.tex] : null;
           gl.uniform1f(U.uHasTex, t ? 1 : 0);
           if (t) { gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, t); gl.uniform1i(U.uTex, 0); }
@@ -741,7 +735,7 @@
        every wheel notch" and a continuous move. */
     var d = target - progress;
     if (Math.abs(d) > 0.00008) {
-      progress += d * (drag.on ? 1 : 0.085);
+      progress += d * 0.085;
       kick();
     } else progress = target;
 
@@ -776,8 +770,8 @@
       dist = lerp(wide, fit(pr, camZoom), pull);
       dist = Math.max(dist, bounds.r * 0.20);
     }
-    var yaw = camYaw + drag.yaw;
-    var pitch = Math.max(-1.2, Math.min(1.2, camPitch + drag.pitch));
+    var yaw = camYaw;
+    var pitch = Math.max(-1.2, Math.min(1.2, camPitch));
     var eye = [tgt[0] + dist * Math.cos(pitch) * Math.sin(yaw),
       tgt[1] + dist * Math.sin(pitch), tgt[2] + dist * Math.cos(pitch) * Math.cos(yaw)];
 
@@ -802,14 +796,21 @@
     // ---- scene into the multisampled float target ----
     gl.bindFramebuffer(gl.FRAMEBUFFER, msFB);
     gl.viewport(0, 0, size[0], size[1]);
-    gl.disable(gl.DEPTH_TEST); gl.disable(gl.BLEND);
-    gl.useProgram(bgProg);
-    gl.uniform2f(BG.uAspect, Math.max(1, size[0] / size[1]), Math.max(1, size[1] / size[0]));
-    fsq();
 
-    gl.enable(gl.DEPTH_TEST); gl.clear(gl.DEPTH_BUFFER_BIT);
+    // Nothing is painted behind the model any more. The buffer is cleared to
+    // fully transparent and the white backdrop goes on underneath in the
+    // composite pass, AFTER tonemapping -- which is the only way white comes
+    // out actually white. Run through the ACES curve it would need a linear
+    // value near 8.0 to reach 1.0, and anything that bright detonates the
+    // bloom threshold and haloes the whole screen.
+    gl.clearColor(0, 0, 0, 0);
+    gl.enable(gl.DEPTH_TEST);
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
     gl.enable(gl.BLEND);
-    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+    // Colour blends normally; alpha accumulates as coverage, so a pixel two
+    // translucent parts deep still reports how much of it is watch.
+    gl.blendFuncSeparate(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA,
+                         gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
     gl.useProgram(prog);
     gl.uniformMatrix4fv(U.uProj, false,
       perspective(FOV, size[0] / size[1], bounds.r * 0.02, bounds.r * 120));
