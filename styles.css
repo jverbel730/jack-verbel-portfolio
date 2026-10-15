@@ -234,6 +234,9 @@ figure{ margin:0; }
 .intro-meta .tag{ white-space:normal; }
 
 /* project tiles: full-bleed image, everything else underneath in small type */
+/* three across, then straight to one column; a 2-up step would strand the third tile */
+.tiles-3{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); }
+@media (max-width: 760px){ .tiles-3{ grid-template-columns:1fr; } }
 .tile{ display:block; }
 /* White, not a grey plate. Most of the render JPGs have a white background
    baked in, so a tinted plate behind them shows as a hard white rectangle
@@ -252,6 +255,8 @@ figure{ margin:0; }
   transition:transform .7s cubic-bezier(.2,.7,.3,1);
 }
 .tile:hover .tile-media img{ transform:scale(1.032); }
+/* landscape subjects (a vehicle) would shrink to a sliver inside the same padding */
+.tile-media-wide img{ padding:clamp(4px,1vw,14px); }
 .tile-head{
   display:flex; align-items:baseline; justify-content:space-between;
   gap:20px; margin-top:20px;
